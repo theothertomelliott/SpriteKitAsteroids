@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E218EA7E18F2658800F7ACAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA7D18F2658800F7ACAD /* Foundation.framework */; };
+		E218EA8018F2658800F7ACAD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA7F18F2658800F7ACAD /* CoreGraphics.framework */; };
+		E218EA8218F2658800F7ACAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA8118F2658800F7ACAD /* UIKit.framework */; };
+		E218EA8418F2658800F7ACAD /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA8318F2658800F7ACAD /* SpriteKit.framework */; };
+		E218EA8A18F2658800F7ACAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E218EA8818F2658800F7ACAD /* InfoPlist.strings */; };
+		E218EA8C18F2658800F7ACAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EA8B18F2658800F7ACAD /* main.m */; };
+		E218EA9018F2658800F7ACAD /* SKEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EA8F18F2658800F7ACAD /* SKEAppDelegate.m */; };
+		E218EA9318F2658800F7ACAD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9118F2658800F7ACAD /* Main_iPhone.storyboard */; };
+		E218EA9618F2658800F7ACAD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9418F2658800F7ACAD /* Main_iPad.storyboard */; };
+		E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EA9818F2658800F7ACAD /* SKEViewController.m */; };
+		E218EA9C18F2658800F7ACAD /* SKEMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EA9B18F2658800F7ACAD /* SKEMyScene.m */; };
+		E218EA9E18F2658800F7ACAD /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9D18F2658800F7ACAD /* Spaceship.png */; };
+		E218EAA018F2658800F7ACAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9F18F2658800F7ACAD /* Images.xcassets */; };
+		E218EAA718F2658800F7ACAD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EAA618F2658800F7ACAD /* XCTest.framework */; };
+		E218EAA818F2658800F7ACAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA7D18F2658800F7ACAD /* Foundation.framework */; };
+		E218EAA918F2658800F7ACAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA8118F2658800F7ACAD /* UIKit.framework */; };
+		E218EAB118F2658800F7ACAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E218EAAF18F2658800F7ACAD /* InfoPlist.strings */; };
+		E218EAB318F2658800F7ACAD /* SKMobileExTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EAB218F2658800F7ACAD /* SKMobileExTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E218EAAA18F2658800F7ACAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E218EA7218F2658800F7ACAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E218EA7918F2658800F7ACAD;
+			remoteInfo = SKMobileEx;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E218EA7A18F2658800F7ACAD /* SKMobileEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKMobileEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E218EA7D18F2658800F7ACAD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E218EA7F18F2658800F7ACAD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E218EA8118F2658800F7ACAD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E218EA8318F2658800F7ACAD /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		E218EA8718F2658800F7ACAD /* SKMobileEx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKMobileEx-Info.plist"; sourceTree = "<group>"; };
+		E218EA8918F2658800F7ACAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E218EA8B18F2658800F7ACAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E218EA8D18F2658800F7ACAD /* SKMobileEx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKMobileEx-Prefix.pch"; sourceTree = "<group>"; };
+		E218EA8E18F2658800F7ACAD /* SKEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEAppDelegate.h; sourceTree = "<group>"; };
+		E218EA8F18F2658800F7ACAD /* SKEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEAppDelegate.m; sourceTree = "<group>"; };
+		E218EA9218F2658800F7ACAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		E218EA9518F2658800F7ACAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		E218EA9718F2658800F7ACAD /* SKEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEViewController.h; sourceTree = "<group>"; };
+		E218EA9818F2658800F7ACAD /* SKEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEViewController.m; sourceTree = "<group>"; };
+		E218EA9A18F2658800F7ACAD /* SKEMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEMyScene.h; sourceTree = "<group>"; };
+		E218EA9B18F2658800F7ACAD /* SKEMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEMyScene.m; sourceTree = "<group>"; };
+		E218EA9D18F2658800F7ACAD /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		E218EA9F18F2658800F7ACAD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E218EAA518F2658800F7ACAD /* SKMobileExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKMobileExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E218EAA618F2658800F7ACAD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E218EAAE18F2658800F7ACAD /* SKMobileExTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKMobileExTests-Info.plist"; sourceTree = "<group>"; };
+		E218EAB018F2658800F7ACAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E218EAB218F2658800F7ACAD /* SKMobileExTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKMobileExTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E218EA7718F2658800F7ACAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E218EA8018F2658800F7ACAD /* CoreGraphics.framework in Frameworks */,
+				E218EA8218F2658800F7ACAD /* UIKit.framework in Frameworks */,
+				E218EA8418F2658800F7ACAD /* SpriteKit.framework in Frameworks */,
+				E218EA7E18F2658800F7ACAD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E218EAA218F2658800F7ACAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E218EAA718F2658800F7ACAD /* XCTest.framework in Frameworks */,
+				E218EAA918F2658800F7ACAD /* UIKit.framework in Frameworks */,
+				E218EAA818F2658800F7ACAD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E218EA7118F2658800F7ACAD = {
+			isa = PBXGroup;
+			children = (
+				E218EA8518F2658800F7ACAD /* SKMobileEx */,
+				E218EAAC18F2658800F7ACAD /* SKMobileExTests */,
+				E218EA7C18F2658800F7ACAD /* Frameworks */,
+				E218EA7B18F2658800F7ACAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E218EA7B18F2658800F7ACAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E218EA7A18F2658800F7ACAD /* SKMobileEx.app */,
+				E218EAA518F2658800F7ACAD /* SKMobileExTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E218EA7C18F2658800F7ACAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E218EA7D18F2658800F7ACAD /* Foundation.framework */,
+				E218EA7F18F2658800F7ACAD /* CoreGraphics.framework */,
+				E218EA8118F2658800F7ACAD /* UIKit.framework */,
+				E218EA8318F2658800F7ACAD /* SpriteKit.framework */,
+				E218EAA618F2658800F7ACAD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E218EA8518F2658800F7ACAD /* SKMobileEx */ = {
+			isa = PBXGroup;
+			children = (
+				E218EA8E18F2658800F7ACAD /* SKEAppDelegate.h */,
+				E218EA8F18F2658800F7ACAD /* SKEAppDelegate.m */,
+				E218EA9118F2658800F7ACAD /* Main_iPhone.storyboard */,
+				E218EA9418F2658800F7ACAD /* Main_iPad.storyboard */,
+				E218EA9718F2658800F7ACAD /* SKEViewController.h */,
+				E218EA9818F2658800F7ACAD /* SKEViewController.m */,
+				E218EA9A18F2658800F7ACAD /* SKEMyScene.h */,
+				E218EA9B18F2658800F7ACAD /* SKEMyScene.m */,
+				E218EA9D18F2658800F7ACAD /* Spaceship.png */,
+				E218EA9F18F2658800F7ACAD /* Images.xcassets */,
+				E218EA8618F2658800F7ACAD /* Supporting Files */,
+			);
+			path = SKMobileEx;
+			sourceTree = "<group>";
+		};
+		E218EA8618F2658800F7ACAD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E218EA8718F2658800F7ACAD /* SKMobileEx-Info.plist */,
+				E218EA8818F2658800F7ACAD /* InfoPlist.strings */,
+				E218EA8B18F2658800F7ACAD /* main.m */,
+				E218EA8D18F2658800F7ACAD /* SKMobileEx-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E218EAAC18F2658800F7ACAD /* SKMobileExTests */ = {
+			isa = PBXGroup;
+			children = (
+				E218EAB218F2658800F7ACAD /* SKMobileExTests.m */,
+				E218EAAD18F2658800F7ACAD /* Supporting Files */,
+			);
+			path = SKMobileExTests;
+			sourceTree = "<group>";
+		};
+		E218EAAD18F2658800F7ACAD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E218EAAE18F2658800F7ACAD /* SKMobileExTests-Info.plist */,
+				E218EAAF18F2658800F7ACAD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E218EA7918F2658800F7ACAD /* SKMobileEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E218EAB618F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileEx" */;
+			buildPhases = (
+				E218EA7618F2658800F7ACAD /* Sources */,
+				E218EA7718F2658800F7ACAD /* Frameworks */,
+				E218EA7818F2658800F7ACAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKMobileEx;
+			productName = SKMobileEx;
+			productReference = E218EA7A18F2658800F7ACAD /* SKMobileEx.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E218EAA418F2658800F7ACAD /* SKMobileExTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E218EAB918F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileExTests" */;
+			buildPhases = (
+				E218EAA118F2658800F7ACAD /* Sources */,
+				E218EAA218F2658800F7ACAD /* Frameworks */,
+				E218EAA318F2658800F7ACAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E218EAAB18F2658800F7ACAD /* PBXTargetDependency */,
+			);
+			name = SKMobileExTests;
+			productName = SKMobileExTests;
+			productReference = E218EAA518F2658800F7ACAD /* SKMobileExTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E218EA7218F2658800F7ACAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SKE;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Tom Elliott";
+				TargetAttributes = {
+					E218EAA418F2658800F7ACAD = {
+						TestTargetID = E218EA7918F2658800F7ACAD;
+					};
+				};
+			};
+			buildConfigurationList = E218EA7518F2658800F7ACAD /* Build configuration list for PBXProject "SKMobileEx" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E218EA7118F2658800F7ACAD;
+			productRefGroup = E218EA7B18F2658800F7ACAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E218EA7918F2658800F7ACAD /* SKMobileEx */,
+				E218EAA418F2658800F7ACAD /* SKMobileExTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E218EA7818F2658800F7ACAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E218EA9E18F2658800F7ACAD /* Spaceship.png in Resources */,
+				E218EAA018F2658800F7ACAD /* Images.xcassets in Resources */,
+				E218EA9618F2658800F7ACAD /* Main_iPad.storyboard in Resources */,
+				E218EA9318F2658800F7ACAD /* Main_iPhone.storyboard in Resources */,
+				E218EA8A18F2658800F7ACAD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E218EAA318F2658800F7ACAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E218EAB118F2658800F7ACAD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E218EA7618F2658800F7ACAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */,
+				E218EA9018F2658800F7ACAD /* SKEAppDelegate.m in Sources */,
+				E218EA9C18F2658800F7ACAD /* SKEMyScene.m in Sources */,
+				E218EA8C18F2658800F7ACAD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E218EAA118F2658800F7ACAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E218EAB318F2658800F7ACAD /* SKMobileExTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E218EAAB18F2658800F7ACAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E218EA7918F2658800F7ACAD /* SKMobileEx */;
+			targetProxy = E218EAAA18F2658800F7ACAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E218EA8818F2658800F7ACAD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E218EA8918F2658800F7ACAD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E218EA9118F2658800F7ACAD /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E218EA9218F2658800F7ACAD /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		E218EA9418F2658800F7ACAD /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E218EA9518F2658800F7ACAD /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		E218EAAF18F2658800F7ACAD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E218EAB018F2658800F7ACAD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E218EAB418F2658800F7ACAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E218EAB518F2658800F7ACAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E218EAB718F2658800F7ACAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
+				INFOPLIST_FILE = "SKMobileEx/SKMobileEx-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E218EAB818F2658800F7ACAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
+				INFOPLIST_FILE = "SKMobileEx/SKMobileEx-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E218EABA18F2658800F7ACAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SKMobileEx.app/SKMobileEx";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SKMobileExTests/SKMobileExTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E218EABB18F2658800F7ACAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SKMobileEx.app/SKMobileEx";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
+				INFOPLIST_FILE = "SKMobileExTests/SKMobileExTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E218EA7518F2658800F7ACAD /* Build configuration list for PBXProject "SKMobileEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E218EAB418F2658800F7ACAD /* Debug */,
+				E218EAB518F2658800F7ACAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E218EAB618F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E218EAB718F2658800F7ACAD /* Debug */,
+				E218EAB818F2658800F7ACAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E218EAB918F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileExTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E218EABA18F2658800F7ACAD /* Debug */,
+				E218EABB18F2658800F7ACAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E218EA7218F2658800F7ACAD /* Project object */;
+}
