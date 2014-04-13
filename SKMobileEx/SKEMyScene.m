@@ -36,12 +36,6 @@
             [self checkButtons];
         }];
         
-        SKAction *updateLine = [SKAction runBlock:^{
-            [self updateLine];
-        }];
-        SKAction *updateLineAction = [SKAction sequence:@[wait,updateLine]];
-        [self runAction:[SKAction repeatActionForever:updateLineAction]];
-        
         SKAction *checkButtonsAction = [SKAction sequence:@[wait,checkButtons]];
         [self runAction:[SKAction repeatActionForever:checkButtonsAction]];
         
@@ -79,6 +73,12 @@
     self.shipDirection.path = pathToDraw;
     [self.shipDirection setStrokeColor:[SKColor redColor]];
     
+}
+
+- (void)didSimulatePhysics
+
+{
+    [self updateLine];
 }
 
 - (void) createButtons:(CGSize) size{
