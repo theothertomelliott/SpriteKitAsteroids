@@ -89,13 +89,17 @@
 
     
     self.leftButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:YES];
-    [self.leftButton setPosition:CGPointMake(20,95)];
+    [self.leftButton setPosition:CGPointMake(20,45)];
     [self addChild:self.leftButton];
 
     
     self.rightButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:YES];
-    [self.rightButton setPosition:CGPointMake(75,95)];
+    [self.rightButton setPosition:CGPointMake(75,45)];
     [self addChild:self.rightButton];
+    
+    self.fireButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO];
+    [self.fireButton setPosition:CGPointMake(size.width - 70,45)];
+    [self addChild:self.fireButton];
     
 }
 
@@ -106,6 +110,13 @@
     vector.dy = sin(radians+1.57079633f) * 10;
     NSLog(@"DX: %0.2f DY: %0.2f", vector.dx, vector.dy);
     return vector;
+}
+
+- (CGPoint) addPoint:(CGPoint)a toVector:(CGVector)b {
+    CGPoint ov;
+    ov.x = a.x + b.dx;
+    ov.y = a.y + b.dy;
+    return ov;
 }
 
 - (CGVector) multiplyVector:(CGVector) v by:(CGFloat)multiplier{
@@ -132,6 +143,29 @@
     if (self.rightButton.wasPressed) {
         SKAction *action = [SKAction rotateByAngle:-0.5 duration:0.3];
         [self.ship runAction:[SKAction repeatAction:action count:1]];
+    }
+    
+    if(self.fireButton.wasPressed){
+        
+        CGVector shipDirection = [self convertAngleToVector:self.ship.zRotation];
+        
+        SKShapeNode* missile = [SKShapeNode node];
+        
+        missile.position = self.ship.position;
+        missile.position = CGPointMake(missile.position.x + shipDirection.dx,
+                                       missile.position.y + shipDirection.dy);
+        
+        SKAction *moveMissile = [SKAction moveBy:[self multiplyVector:shipDirection by:20.0f] duration:1];
+        [missile runAction:[SKAction repeatActionForever:moveMissile]];
+        
+        CGMutablePathRef pathToDraw = CGPathCreateMutable();
+        CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
+        CGVector thrustDirection = [self convertAngleToVector:self.ship.zRotation];
+        CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);
+        
+        missile.path = pathToDraw;
+        
+        [self addChild:missile];
     }
 }
 
