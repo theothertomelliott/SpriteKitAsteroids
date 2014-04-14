@@ -8,12 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "JCButton.h"
-
-static const uint32_t missileCategory = 0x1 << 0;
-static const uint32_t shipCategory = 0x1 << 1;
-static const uint32_t asteroidCategory = 0x1 << 2;
-static const uint32_t worldCategory = 0x1 << 3;
-
+#import "CollisionCategories.h"
+#import "SKEShip.h"
 
 @interface SKEMyScene : SKScene <SKPhysicsContactDelegate>
 
@@ -22,7 +18,6 @@ static const uint32_t worldCategory = 0x1 << 3;
 @property (strong, nonatomic) JCButton *leftButton;
 @property (strong, nonatomic) JCButton *rightButton;
 
-@property (strong, nonatomic) SKSpriteNode* ship;
-@property (strong, nonatomic) SKShapeNode* shipDirection;
+@property (strong, nonatomic) SKEShip* ship;
 
 @end

@@ -28,6 +28,7 @@
 		E24D8E0F18FB04F6000D6EBA /* JCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0A18FB04F6000D6EBA /* JCButton.m */; };
 		E24D8E1018FB04F6000D6EBA /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0C18FB04F6000D6EBA /* JCImageJoystick.m */; };
 		E24D8E1118FB04F6000D6EBA /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */; };
+		E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1418FB8D3D000D6EBA /* SKEShip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,9 @@
 		E24D8E0C18FB04F6000D6EBA /* JCImageJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCImageJoystick.m; sourceTree = "<group>"; };
 		E24D8E0D18FB04F6000D6EBA /* JCJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCJoystick.h; sourceTree = "<group>"; };
 		E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCJoystick.m; sourceTree = "<group>"; };
+		E24D8E1318FB8D3D000D6EBA /* SKEShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEShip.h; sourceTree = "<group>"; };
+		E24D8E1418FB8D3D000D6EBA /* SKEShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEShip.m; sourceTree = "<group>"; };
+		E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 		E218EA8518F2658800F7ACAD /* SKMobileEx */ = {
 			isa = PBXGroup;
 			children = (
+				E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */,
+				E24D8E1218FB8D22000D6EBA /* Entities */,
 				E218EA8E18F2658800F7ACAD /* SKEAppDelegate.h */,
 				E218EA8F18F2658800F7ACAD /* SKEAppDelegate.m */,
 				E218EA9118F2658800F7ACAD /* Main_iPhone.storyboard */,
@@ -188,6 +194,15 @@
 				E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */,
 			);
 			name = JCInput;
+			sourceTree = "<group>";
+		};
+		E24D8E1218FB8D22000D6EBA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E24D8E1318FB8D3D000D6EBA /* SKEShip.h */,
+				E24D8E1418FB8D3D000D6EBA /* SKEShip.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +308,7 @@
 				E24D8E1018FB04F6000D6EBA /* JCImageJoystick.m in Sources */,
 				E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */,
 				E218EA9018F2658800F7ACAD /* SKEAppDelegate.m in Sources */,
+				E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */,
 				E218EA9C18F2658800F7ACAD /* SKEMyScene.m in Sources */,
 				E218EA8C18F2658800F7ACAD /* main.m in Sources */,
 				E24D8E0F18FB04F6000D6EBA /* JCButton.m in Sources */,

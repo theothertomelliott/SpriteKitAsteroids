@@ -106,46 +106,14 @@
 }
 
 - (void) createShip {
-
-    self.ship = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-    self.ship.position = CGPointMake(self.size.width/2,self.size.height/2);
-    
-    CGSize size = self.ship.size;
-    size.height = size.height/8;
-    size.width = size.width/8;
-    [self.ship setSize:size];
-    self.ship.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.ship.frame.size.width/2];
-    self.ship.physicsBody.usesPreciseCollisionDetection = YES;
-    
-    self.ship.physicsBody.categoryBitMask = shipCategory;
-    self.ship.physicsBody.collisionBitMask = 0;
-    self.ship.physicsBody.contactTestBitMask = asteroidCategory;
-    
+    self.ship = [[SKEShip alloc] initDefault];
+    [self.ship setPosition:CGPointMake(self.size.width/2,self.size.height/2)];
     [self addChild:self.ship];
-    
-    self.shipDirection = [SKShapeNode node];
-    [self addChild:self.shipDirection];
-
-}
-
-- (void) updateLine {
-    
-    CGMutablePathRef pathToDraw = CGPathCreateMutable();
-    self.shipDirection.position = self.ship.position;
-    CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
-    
-    CGVector thrustDirection = [self multiplyVector:[self convertAngleToVector:self.ship.zRotation] by:10.0f];
-    
-    CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);
-    self.shipDirection.path = pathToDraw;
-    [self.shipDirection setStrokeColor:[SKColor redColor]];
-    
 }
 
 - (void)didSimulatePhysics
 
 {
-    [self updateLine];
 }
 
 
