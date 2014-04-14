@@ -168,6 +168,8 @@
     missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:1.0f];
     missile.physicsBody.usesPreciseCollisionDetection = YES;
     missile.physicsBody.categoryBitMask = missileCategory;
+    missile.physicsBody.collisionBitMask = 0;
+    missile.physicsBody.contactTestBitMask = asteroidCategory;
     
     [self addChild:missile];
 
