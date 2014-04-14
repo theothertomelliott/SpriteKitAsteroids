@@ -112,6 +112,8 @@
        || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == shipCategory)){
         NSLog(@"Ship crashed!");
         [self removeChildrenInArray:[NSArray arrayWithObject:self.ship]];
+        
+        // TODO: Create a new ship after a brief period, or show game over if no more lives
     }
 }
 
