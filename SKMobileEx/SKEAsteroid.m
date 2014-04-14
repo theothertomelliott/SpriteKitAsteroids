@@ -11,11 +11,11 @@
 
 @implementation SKEAsteroid
 
--(id)initDefault {
+-(id)initWithRadius:(CGFloat) radius andPosition:(CGPoint)position {
     if((self = [super init]))
     {
-        
-        CGFloat radius = 40.0f;
+        self.radius = radius;
+        [self setPosition:position];
         
         CGMutablePathRef circlePath = CGPathCreateMutable();
         CGPathAddEllipseInRect(circlePath , NULL , CGRectMake(-radius, -radius, radius*2, radius*2) );

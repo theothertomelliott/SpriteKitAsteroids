@@ -59,8 +59,7 @@
 
 - (void) addAsteroids {
     
-    SKEAsteroid* asteroid = [[SKEAsteroid alloc] initDefault];
-    asteroid.position = CGPointMake(30.0f, 30.0f);
+    SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:40.0f andPosition:CGPointMake(100.0f, 100.0f)];
     [self addChild:asteroid];
     
 }
@@ -88,6 +87,24 @@
         
         NSLog(@"Moved ship");
     }
+    
+    if(contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == missileCategory){
+        NSLog(@"Hit asteroid!");
+        
+        SKEAsteroid* shotAsteroid = (SKEAsteroid*) contact.bodyA.node;
+        
+        SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position.x, shotAsteroid.position.y)];
+        [self addChild:asteroid];
+        
+        asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position.x+10.0f, shotAsteroid.position.y+10.0f)];
+        [self addChild:asteroid];
+        
+        [self removeChildrenInArray:[NSArray arrayWithObject:shotAsteroid]];
+    }
+    
+    if(contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == shipCategory){
+        NSLog(@"Ship crashed!");
+    }
 }
 
 - (void) createShip {
@@ -97,7 +114,6 @@
 }
 
 - (void)didSimulatePhysics
-
 {
 }
 

@@ -10,6 +10,8 @@
 
 @interface SKEAsteroid : SKShapeNode
 
--(id)initDefault;
+-(id)initWithRadius:(CGFloat) radius andPosition:(CGPoint) position;
+
+@property (nonatomic) CGFloat radius;
 
 @end
