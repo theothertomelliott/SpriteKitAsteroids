@@ -19,5 +19,6 @@
 @property (strong, nonatomic) JCButton *rightButton;
 
 @property (strong, nonatomic) SKEShip* ship;
+@property (strong, nonatomic) SKLabelNode* score;
 
 @end

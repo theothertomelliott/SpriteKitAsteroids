@@ -20,13 +20,14 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.score = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+        self.score.text = @"00000";
+        self.score.fontSize = 24;
+        self.score.position = CGPointMake(self.frame.size.width - 100,
+                                          self.frame.size.height - 20);
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
+        [self addChild:self.score];
+         
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.usesPreciseCollisionDetection = YES;
         self.physicsBody.categoryBitMask = worldCategory;
@@ -36,8 +37,7 @@
         self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
         self.physicsWorld.contactDelegate = self;
         
-        [self addChild:myLabel];
-        
+ 
         [self addAsteroids];
         
         [self createShip];
