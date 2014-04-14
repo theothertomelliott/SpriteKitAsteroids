@@ -88,22 +88,30 @@
         NSLog(@"Moved ship");
     }
     
-    if(contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == missileCategory){
+    if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == missileCategory)
+    || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == missileCategory)){
         NSLog(@"Hit asteroid!");
         
-        SKEAsteroid* shotAsteroid = (SKEAsteroid*) contact.bodyA.node;
+        SKEAsteroid* shotAsteroid = (SKEAsteroid*)  (contact.bodyA.categoryBitMask == asteroidCategory ? contact.bodyA.node : contact.bodyB.node);
         
-        SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position.x, shotAsteroid.position.y)];
-        [self addChild:asteroid];
+        if(shotAsteroid.radius > 10){
+            SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position.x, shotAsteroid.position.y)];
+            [self addChild:asteroid];
         
-        asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position.x+10.0f, shotAsteroid.position.y+10.0f)];
-        [self addChild:asteroid];
+            asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position .x+10.0f, shotAsteroid.position.y+10.0f)];
+            [self addChild:asteroid];
+        }
         
-        [self removeChildrenInArray:[NSArray arrayWithObject:shotAsteroid]];
+        // Remove the nodes in question
+        [self removeChildrenInArray:[NSArray arrayWithObjects:contact.bodyA.node,contact.bodyB.node,nil]];
+        
+        // TODO: When there are no asteroids left, create some new big ones
     }
     
-    if(contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == shipCategory){
+    if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == shipCategory)
+       || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == shipCategory)){
         NSLog(@"Ship crashed!");
+        [self removeChildrenInArray:[NSArray arrayWithObject:self.ship]];
     }
 }
 
