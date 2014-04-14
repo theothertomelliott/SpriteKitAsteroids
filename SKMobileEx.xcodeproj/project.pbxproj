@@ -29,6 +29,7 @@
 		E24D8E1018FB04F6000D6EBA /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0C18FB04F6000D6EBA /* JCImageJoystick.m */; };
 		E24D8E1118FB04F6000D6EBA /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */; };
 		E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1418FB8D3D000D6EBA /* SKEShip.m */; };
+		E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		E24D8E1318FB8D3D000D6EBA /* SKEShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEShip.h; sourceTree = "<group>"; };
 		E24D8E1418FB8D3D000D6EBA /* SKEShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEShip.m; sourceTree = "<group>"; };
 		E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
+		E24D8E1718FB943B000D6EBA /* SKEAsteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEAsteroid.h; sourceTree = "<group>"; };
+		E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEAsteroid.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +204,8 @@
 			children = (
 				E24D8E1318FB8D3D000D6EBA /* SKEShip.h */,
 				E24D8E1418FB8D3D000D6EBA /* SKEShip.m */,
+				E24D8E1718FB943B000D6EBA /* SKEAsteroid.h */,
+				E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */,
 				E24D8E1018FB04F6000D6EBA /* JCImageJoystick.m in Sources */,
 				E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */,
 				E218EA9018F2658800F7ACAD /* SKEAppDelegate.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "SKEMyScene.h"
+#import "SKEAsteroid.h"
 
 @implementation SKEMyScene
 
@@ -58,24 +59,8 @@
 
 - (void) addAsteroids {
     
-    CGFloat radius = 40.0f;
-    
-    SKShapeNode* asteroid = [SKShapeNode node];
+    SKEAsteroid* asteroid = [[SKEAsteroid alloc] initDefault];
     asteroid.position = CGPointMake(30.0f, 30.0f);
-    CGMutablePathRef circlePath = CGPathCreateMutable();
-    CGPathAddEllipseInRect(circlePath , NULL , CGRectMake(-radius, -radius, radius*2, radius*2) );
-    asteroid.path = circlePath;
-    asteroid.fillColor =  [SKColor whiteColor];
-    asteroid.lineWidth=0;
-    
-    asteroid.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    asteroid.physicsBody.velocity = CGVectorMake(10.0f, 5.0f);
-    
-    self.ship.physicsBody.usesPreciseCollisionDetection = YES;
-    self.ship.physicsBody.categoryBitMask = asteroidCategory;
-    self.ship.physicsBody.collisionBitMask = 0;
-    self.ship.physicsBody.contactTestBitMask = missileCategory;
-    
     [self addChild:asteroid];
     
 }
