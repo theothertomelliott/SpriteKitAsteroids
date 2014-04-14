@@ -9,7 +9,13 @@
 #import <SpriteKit/SpriteKit.h>
 #import "JCButton.h"
 
-@interface SKEMyScene : SKScene
+static const uint32_t missileCategory = 0x1 << 0;
+static const uint32_t shipCategory = 0x1 << 1;
+static const uint32_t asteroidCategory = 0x1 << 2;
+static const uint32_t worldCategory = 0x1 << 3;
+
+
+@interface SKEMyScene : SKScene <SKPhysicsContactDelegate>
 
 @property (strong, nonatomic) JCButton *fireButton;
 @property (strong, nonatomic) JCButton *thrustButton;

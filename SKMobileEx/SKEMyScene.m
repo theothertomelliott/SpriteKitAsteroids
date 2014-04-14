@@ -12,6 +12,9 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
+        
+        NSLog(@"Initializing scene");
+        
         /* Setup your scene here */
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
@@ -24,41 +27,105 @@
                                        CGRectGetMidY(self.frame));
         
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.physicsBody.usesPreciseCollisionDetection = YES;
+        self.physicsBody.categoryBitMask = worldCategory;
+        self.physicsBody.collisionBitMask = 0;
+        self.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+        
         self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
+        self.physicsWorld.contactDelegate = self;
         
         [self addChild:myLabel];
+        
+        [self addAsteroids];
+        
+        [self createShip];
         
         [self createButtons:size];
          
         //scheduling the action to check buttons
-        SKAction *wait = [SKAction waitForDuration:0.1];
+        SKAction *wait = [SKAction waitForDuration:0.3f];
         SKAction *checkButtons = [SKAction runBlock:^{
             [self checkButtons];
         }];
         
         SKAction *checkButtonsAction = [SKAction sequence:@[wait,checkButtons]];
         [self runAction:[SKAction repeatActionForever:checkButtonsAction]];
-        
-        self.ship = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        self.ship.position = CGPointMake(0.0f,0.0f);
-        
-        CGSize size = self.ship.size;
-        size.height = size.height/4;
-        size.width = size.width/4;
-        [self.ship setSize:size];
-        self.ship.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.ship.frame.size.width/2];
-        self.ship.physicsBody.restitution = 1.0f;
-        self.ship.physicsBody.linearDamping = 0.0f;
-        self.ship.physicsBody.allowsRotation = NO;
-        self.ship.physicsBody.velocity = CGVectorMake(20.0f, 20.0f);
-        
-        [self addChild:self.ship];
-
-        self.shipDirection = [SKShapeNode node];
-        [self addChild:self.shipDirection];
-
+       
     }
     return self;
+}
+
+- (void) addAsteroids {
+    
+    CGFloat radius = 40.0f;
+    
+    SKShapeNode* asteroid = [SKShapeNode node];
+    asteroid.position = CGPointMake(30.0f, 30.0f);
+    CGMutablePathRef circlePath = CGPathCreateMutable();
+    CGPathAddEllipseInRect(circlePath , NULL , CGRectMake(-radius, -radius, radius*2, radius*2) );
+    asteroid.path = circlePath;
+    asteroid.fillColor =  [SKColor whiteColor];
+    asteroid.lineWidth=0;
+    
+    asteroid.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+    asteroid.physicsBody.velocity = CGVectorMake(10.0f, 5.0f);
+    
+    self.ship.physicsBody.usesPreciseCollisionDetection = YES;
+    self.ship.physicsBody.categoryBitMask = asteroidCategory;
+    self.ship.physicsBody.collisionBitMask = 0;
+    self.ship.physicsBody.contactTestBitMask = missileCategory;
+    
+    [self addChild:asteroid];
+    
+}
+
+- (void) didBeginContact:(SKPhysicsContact *)contact
+{
+    SKSpriteNode *firstNode, *secondNode;
+    
+    firstNode = (SKSpriteNode *)contact.bodyA.node;
+    secondNode = (SKSpriteNode *) contact.bodyB.node;
+    
+    NSLog(@"Collision");
+    
+    if ((contact.bodyA.categoryBitMask == worldCategory)
+        && (contact.bodyB.categoryBitMask == shipCategory))
+    {
+        CGPoint contactPoint = contact.contactPoint;
+        NSLog(@"Contact at %0.2f,%0.2f",contactPoint.x, contactPoint.y);
+        
+        SKPhysicsBody *tempPhysicsBody = self.ship.physicsBody;
+        self.ship.physicsBody = nil;
+        // Position and re-add physics body
+        [self.ship setPosition:CGPointMake(60.0f, 60.0f)];
+        self.ship.physicsBody = tempPhysicsBody;
+        
+        NSLog(@"Moved ship");
+    }
+}
+
+- (void) createShip {
+
+    self.ship = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+    self.ship.position = CGPointMake(self.size.width/2,self.size.height/2);
+    
+    CGSize size = self.ship.size;
+    size.height = size.height/8;
+    size.width = size.width/8;
+    [self.ship setSize:size];
+    self.ship.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.ship.frame.size.width/2];
+    self.ship.physicsBody.usesPreciseCollisionDetection = YES;
+    
+    self.ship.physicsBody.categoryBitMask = shipCategory;
+    self.ship.physicsBody.collisionBitMask = 0;
+    self.ship.physicsBody.contactTestBitMask = asteroidCategory;
+    
+    [self addChild:self.ship];
+    
+    self.shipDirection = [SKShapeNode node];
+    [self addChild:self.shipDirection];
+
 }
 
 - (void) updateLine {
@@ -81,19 +148,20 @@
     [self updateLine];
 }
 
+
 - (void) createButtons:(CGSize) size{
 
-    self.thrustButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor greenColor] pressedColor:[SKColor blackColor] isTurbo:YES];
+    self.thrustButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor greenColor] pressedColor:[SKColor blackColor] isTurbo:NO];
     [self.thrustButton setPosition:CGPointMake(size.width - 40,95)];
     [self addChild:self.thrustButton];
 
     
-    self.leftButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:YES];
+    self.leftButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO];
     [self.leftButton setPosition:CGPointMake(20,45)];
     [self addChild:self.leftButton];
 
     
-    self.rightButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:YES];
+    self.rightButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO];
     [self.rightButton setPosition:CGPointMake(75,45)];
     [self addChild:self.rightButton];
     
@@ -103,12 +171,10 @@
     
 }
 
-// NEW, SWAPPED DX & DY
 - (CGVector)convertAngleToVector:(CGFloat)radians {
     CGVector vector;
     vector.dx = cos(radians+1.57079633f) * 10;
     vector.dy = sin(radians+1.57079633f) * 10;
-    NSLog(@"DX: %0.2f DY: %0.2f", vector.dx, vector.dy);
     return vector;
 }
 
@@ -124,6 +190,34 @@
     v2.dx = v.dx * multiplier;
     v2.dy = v.dy * multiplier;
     return v2;
+}
+
+- (void) fireMissile {
+    
+    CGVector shipDirection = [self convertAngleToVector:self.ship.zRotation];
+    
+    SKShapeNode* missile = [SKShapeNode node];
+    
+    missile.position = self.ship.position;
+    missile.position = CGPointMake(missile.position.x + shipDirection.dx,
+                                   missile.position.y + shipDirection.dy);
+    
+    SKAction *moveMissile = [SKAction moveBy:[self multiplyVector:shipDirection by:20.0f] duration:1];
+    [missile runAction:[SKAction repeatActionForever:moveMissile]];
+    
+    CGMutablePathRef pathToDraw = CGPathCreateMutable();
+    CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
+    CGVector thrustDirection = [self convertAngleToVector:self.ship.zRotation];
+    CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);
+    
+    missile.path = pathToDraw;
+    
+    missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:1.0f];
+    missile.physicsBody.usesPreciseCollisionDetection = YES;
+    missile.physicsBody.categoryBitMask = missileCategory;
+    
+    [self addChild:missile];
+
 }
 
 - (void)checkButtons
@@ -146,26 +240,7 @@
     }
     
     if(self.fireButton.wasPressed){
-        
-        CGVector shipDirection = [self convertAngleToVector:self.ship.zRotation];
-        
-        SKShapeNode* missile = [SKShapeNode node];
-        
-        missile.position = self.ship.position;
-        missile.position = CGPointMake(missile.position.x + shipDirection.dx,
-                                       missile.position.y + shipDirection.dy);
-        
-        SKAction *moveMissile = [SKAction moveBy:[self multiplyVector:shipDirection by:20.0f] duration:1];
-        [missile runAction:[SKAction repeatActionForever:moveMissile]];
-        
-        CGMutablePathRef pathToDraw = CGPathCreateMutable();
-        CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
-        CGVector thrustDirection = [self convertAngleToVector:self.ship.zRotation];
-        CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);
-        
-        missile.path = pathToDraw;
-        
-        [self addChild:missile];
+        [self fireMissile];
     }
 }
 
