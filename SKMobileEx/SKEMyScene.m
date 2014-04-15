@@ -30,17 +30,12 @@
                                           self.frame.size.height - 20);
         
         [self addChild:self.score];
-         
-        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-        self.physicsBody.usesPreciseCollisionDetection = YES;
-        self.physicsBody.categoryBitMask = worldCategory;
-        self.physicsBody.collisionBitMask = 0;
-        self.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+        
+        [self createWorldBorder];
         
         self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
         self.physicsWorld.contactDelegate = self;
         
- 
         [self addAsteroids];
         
         [self createShip];
@@ -58,6 +53,43 @@
        
     }
     return self;
+}
+
+- (void) createWorldBorder {
+    
+    SKNode* topBorder = [SKNode node];
+    topBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,self.size.height) toPoint:CGPointMake(self.size.width,self.size.height)];
+    topBorder.physicsBody.usesPreciseCollisionDetection = YES;
+    topBorder.physicsBody.categoryBitMask = borderTop;
+    topBorder.physicsBody.collisionBitMask = 0;
+    topBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+    [self addChild:topBorder];
+
+    SKNode* bottomBorder = [SKNode node];
+    bottomBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0.0f,0.0f) toPoint:CGPointMake(self.size.width,0.0f)];
+    bottomBorder.physicsBody.usesPreciseCollisionDetection = YES;
+    bottomBorder.physicsBody.categoryBitMask = borderBottom;
+    bottomBorder.physicsBody.collisionBitMask = 0;
+    bottomBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+    [self addChild:bottomBorder];
+    
+    SKNode* leftBorder = [SKNode node];
+    leftBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0.0f,0.0f) toPoint:CGPointMake(0.0f,self.size.height)];
+    leftBorder.physicsBody.usesPreciseCollisionDetection = YES;
+    leftBorder.physicsBody.categoryBitMask = borderLeft;
+    leftBorder.physicsBody.collisionBitMask = 0;
+    leftBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+    [self addChild:leftBorder];
+    
+    SKNode* rightBorder = [SKNode node];
+    rightBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(self.size.width,0.0f) toPoint:CGPointMake(self.size.width,self.size.height)];
+    rightBorder.physicsBody.usesPreciseCollisionDetection = YES;
+    rightBorder.physicsBody.categoryBitMask = borderRight;
+    rightBorder.physicsBody.collisionBitMask = 0;
+    rightBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+    [self addChild:rightBorder];
+    
+    
 }
 
 - (void) addAsteroids {
@@ -80,26 +112,32 @@
 
 - (void) didBeginContact:(SKPhysicsContact *)contact
 {
-    SKSpriteNode *firstNode, *secondNode;
-    
-    firstNode = (SKSpriteNode *)contact.bodyA.node;
-    secondNode = (SKSpriteNode *) contact.bodyB.node;
-    
     NSLog(@"Collision");
     
-    if ((contact.bodyA.categoryBitMask == worldCategory)
-        && (contact.bodyB.categoryBitMask == shipCategory))
-    {
-        CGPoint contactPoint = contact.contactPoint;
-        NSLog(@"Contact at %0.2f,%0.2f",contactPoint.x, contactPoint.y);
-        
-        SKPhysicsBody *tempPhysicsBody = self.ship.physicsBody;
-        self.ship.physicsBody = nil;
-        // Position and re-add physics body
-        [self.ship setPosition:CGPointMake(60.0f, 60.0f)];
-        self.ship.physicsBody = tempPhysicsBody;
-        
-        NSLog(@"Moved ship");
+    CGFloat distance = contact.bodyB.node.frame.size.width/2 + 5.0f;
+    
+    if(contact.bodyA.categoryBitMask == borderTop){
+        NSLog(@"Collision with top");
+        SKAction *moveBottom = [SKAction moveTo:CGPointMake(contact.bodyB.node.position.x, distance) duration:0.0f];
+        [contact.bodyB.node runAction:moveBottom];
+    }
+    
+    if(contact.bodyA.categoryBitMask == borderLeft){
+        NSLog(@"Collision with left");
+        SKAction *moveRight = [SKAction moveTo:CGPointMake(self.size.width-distance, contact.bodyB.node.position.y) duration:0.0f];
+        [contact.bodyB.node runAction:moveRight];
+    }
+    
+    if(contact.bodyA.categoryBitMask == borderRight){
+        NSLog(@"Collision with right");
+        SKAction *moveLeft = [SKAction moveTo:CGPointMake(distance, contact.bodyB.node.position.y) duration:0.0f];
+        [contact.bodyB.node runAction:moveLeft];
+    }
+    
+    if(contact.bodyA.categoryBitMask == borderBottom){
+        NSLog(@"Collision with bottom");
+        SKAction *moveTop = [SKAction moveTo:CGPointMake(contact.bodyB.node.position.x, self.size.height-distance) duration:0.0f];
+        [contact.bodyB.node runAction:moveTop];
     }
     
     if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == missileCategory)

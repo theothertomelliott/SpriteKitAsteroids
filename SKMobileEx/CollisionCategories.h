@@ -14,4 +14,10 @@ static const uint32_t shipCategory = 0x1 << 1;
 static const uint32_t asteroidCategory = 0x1 << 2;
 static const uint32_t worldCategory = 0x1 << 3;
 
+static const uint32_t borderTop = 0x1 << 4;
+static const uint32_t borderBottom = 0x1 << 5;
+static const uint32_t borderLeft = 0x1 << 6;
+static const uint32_t borderRight = 0x1 << 7;
+
+
 #endif
