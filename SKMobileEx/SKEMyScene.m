@@ -207,9 +207,8 @@
 {
     
     if (self.thrustButton.wasPressed) {
-        //self.ship.physicsBody.velocity = CGVectorMake(100.0f, 100.0f);
         [self.ship.physicsBody applyImpulse:
-         CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],1.0f)];
+         CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],0.5f)];
     }
     
     if (self.leftButton.wasPressed) {
