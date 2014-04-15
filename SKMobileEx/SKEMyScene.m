@@ -190,20 +190,6 @@
     return vector;
 }
 
-- (CGPoint) addPoint:(CGPoint)a toVector:(CGVector)b {
-    CGPoint ov;
-    ov.x = a.x + b.dx;
-    ov.y = a.y + b.dy;
-    return ov;
-}
-
-- (CGVector) multiplyVector:(CGVector) v by:(CGFloat)multiplier{
-    CGVector v2;
-    v2.dx = v.dx * multiplier;
-    v2.dy = v.dy * multiplier;
-    return v2;
-}
-
 - (void) fireMissile {
     
     CGVector shipDirection = [self convertAngleToVector:self.ship.zRotation];
@@ -223,7 +209,7 @@
     if (self.thrustButton.wasPressed) {
         //self.ship.physicsBody.velocity = CGVectorMake(100.0f, 100.0f);
         [self.ship.physicsBody applyImpulse:
-         [self multiplyVector:[self convertAngleToVector:self.ship.zRotation] by:1.0f]];
+         CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],1.0f)];
     }
     
     if (self.leftButton.wasPressed) {
