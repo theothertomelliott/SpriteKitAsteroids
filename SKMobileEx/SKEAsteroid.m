@@ -24,7 +24,7 @@
         self.lineWidth=0;
         
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-        self.physicsBody.velocity = CGVectorMake(10.0f, 5.0f);
+        //self.physicsBody.velocity = CGVectorMake(10.0f, 5.0f);
         
         self.physicsBody.usesPreciseCollisionDetection = YES;
         self.physicsBody.categoryBitMask = asteroidCategory;

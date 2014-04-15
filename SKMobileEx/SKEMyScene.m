@@ -8,6 +8,9 @@
 
 #import "SKEMyScene.h"
 #import "SKEAsteroid.h"
+#import "SKEMissile.h"
+#import "CGVectorAdditions.h"
+#include <stdlib.h>
 
 @implementation SKEMyScene
 
@@ -59,8 +62,19 @@
 
 - (void) addAsteroids {
     
-    SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:40.0f andPosition:CGPointMake(100.0f, 100.0f)];
-    [self addChild:asteroid];
+    for(int i = 0; i < 3; i++){
+        
+        CGPoint pos = CGPointMake(arc4random_uniform(self.size.width), arc4random_uniform(self.size.height));
+        CGVector impulse = CGVectorMake(arc4random_uniform(200)/100.0f, arc4random_uniform(200)/100.0f);
+        
+        NSLog(@"Asteroid Position: (%0.2f,%0.2f)",pos.x,pos.y);
+        NSLog(@"Asteroid impulse: (%0.2f,%0.2f)",impulse.dx,impulse.dy);
+        
+        SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:40.0f andPosition:pos];
+        [self addChild:asteroid];
+        [asteroid.physicsBody applyImpulse:impulse];
+        
+    }
     
 }
 
@@ -95,11 +109,30 @@
         SKEAsteroid* shotAsteroid = (SKEAsteroid*)  (contact.bodyA.categoryBitMask == asteroidCategory ? contact.bodyA.node : contact.bodyB.node);
         
         if(shotAsteroid.radius > 10){
-            SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position.x, shotAsteroid.position.y)];
+            
+            SKEMissile* missile = (SKEMissile*)  (contact.bodyA.categoryBitMask == missileCategory ? contact.bodyA.node : contact.bodyB.node);
+
+            CGVector mDirection = missile.direction;
+            CGVector mPerp = CGVectorMakePerpendicular(mDirection);
+            
+            CGFloat fragmentDist = shotAsteroid.radius - shotAsteroid.radius/2;
+            
+            CGPoint position1 = CGPointMake(shotAsteroid.position.x + mPerp.dx*fragmentDist, shotAsteroid.position.y + mPerp.dy*fragmentDist);
+            CGPoint position2 = CGPointMake(shotAsteroid.position.x - mPerp.dx*fragmentDist, shotAsteroid.position.y - mPerp.dy*fragmentDist);
+            
+            CGVector mImpulse1 = CGVectorMultiplyByScalar(mPerp, 2.0f);
+            CGVector mImpulse2 = CGVectorMultiplyByScalar(mPerp, -2.0f);
+            
+            NSLog(@"mImpulse1: (%0.2f,%0.2f)", mImpulse1.dx, mImpulse1.dy);
+            NSLog(@"mImpulse2: (%0.2f,%0.2f)", mImpulse2.dx, mImpulse2.dy);
+            
+            SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:position1];
             [self addChild:asteroid];
-        
-            asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:CGPointMake(shotAsteroid.position .x+10.0f, shotAsteroid.position.y+10.0f)];
+            [asteroid.physicsBody applyImpulse:mImpulse1];
+            
+            asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:position2];
             [self addChild:asteroid];
+            [asteroid.physicsBody applyImpulse:mImpulse2];
         }
         
         // Remove the nodes in question
@@ -175,28 +208,11 @@
     
     CGVector shipDirection = [self convertAngleToVector:self.ship.zRotation];
     
-    SKShapeNode* missile = [SKShapeNode node];
-    
-    missile.position = self.ship.position;
-    missile.position = CGPointMake(missile.position.x + shipDirection.dx,
-                                   missile.position.y + shipDirection.dy);
-    
-    SKAction *moveMissile = [SKAction moveBy:[self multiplyVector:shipDirection by:20.0f] duration:1];
-    [missile runAction:[SKAction repeatActionForever:moveMissile]];
-    
-    CGMutablePathRef pathToDraw = CGPathCreateMutable();
-    CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
-    CGVector thrustDirection = [self convertAngleToVector:self.ship.zRotation];
-    CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);
-    
-    missile.path = pathToDraw;
-    
-    missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:1.0f];
-    missile.physicsBody.usesPreciseCollisionDetection = YES;
-    missile.physicsBody.categoryBitMask = missileCategory;
-    missile.physicsBody.collisionBitMask = 0;
-    missile.physicsBody.contactTestBitMask = asteroidCategory;
-    
+    CGPoint mPos = CGPointMake(self.ship.position.x + shipDirection.dx,
+                self.ship.position.y + shipDirection.dy);
+
+    SKEMissile* missile = [[SKEMissile alloc] initWithPosition:mPos andDirection:shipDirection];
+
     [self addChild:missile];
 
 }

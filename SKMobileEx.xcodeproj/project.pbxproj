@@ -30,6 +30,7 @@
 		E24D8E1118FB04F6000D6EBA /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */; };
 		E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1418FB8D3D000D6EBA /* SKEShip.m */; };
 		E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */; };
+		E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = E252EBDE18FCD60A003C7C19 /* SKEMissile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,9 @@
 		E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
 		E24D8E1718FB943B000D6EBA /* SKEAsteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEAsteroid.h; sourceTree = "<group>"; };
 		E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEAsteroid.m; sourceTree = "<group>"; };
+		E252EBDA18FCD4AC003C7C19 /* CGVectorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGVectorAdditions.h; sourceTree = "<group>"; };
+		E252EBDD18FCD60A003C7C19 /* SKEMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEMissile.h; sourceTree = "<group>"; };
+		E252EBDE18FCD60A003C7C19 /* SKEMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEMissile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		E218EA7118F2658800F7ACAD = {
 			isa = PBXGroup;
 			children = (
+				E252EBD918FCD4A0003C7C19 /* CGVectorAwesome */,
 				E24D8E0818FB04E9000D6EBA /* JCInput */,
 				E218EA8518F2658800F7ACAD /* SKMobileEx */,
 				E218EAAC18F2658800F7ACAD /* SKMobileExTests */,
@@ -206,8 +211,18 @@
 				E24D8E1418FB8D3D000D6EBA /* SKEShip.m */,
 				E24D8E1718FB943B000D6EBA /* SKEAsteroid.h */,
 				E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */,
+				E252EBDD18FCD60A003C7C19 /* SKEMissile.h */,
+				E252EBDE18FCD60A003C7C19 /* SKEMissile.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		E252EBD918FCD4A0003C7C19 /* CGVectorAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				E252EBDA18FCD4AC003C7C19 /* CGVectorAdditions.h */,
+			);
+			name = CGVectorAwesome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */,
 				E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */,
 				E24D8E1018FB04F6000D6EBA /* JCImageJoystick.m in Sources */,
 				E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */,
