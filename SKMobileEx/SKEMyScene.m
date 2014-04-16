@@ -23,20 +23,23 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        self.score = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        self.score.text = @"00000";
-        self.score.fontSize = 24;
-        self.score.position = CGPointMake(self.frame.size.width - 100,
+        self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+        self.scoreLabel.text = @"00000";
+        self.scoreLabel.fontSize = 24;
+        self.scoreLabel.position = CGPointMake(self.frame.size.width - 100,
                                           self.frame.size.height - 20);
         
-        [self addChild:self.score];
+        [self addChild:self.scoreLabel];
         
         [self createWorldBorder];
         
         self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
         self.physicsWorld.contactDelegate = self;
         
-        [self addAsteroids];
+        self.asteroids = [NSMutableArray array];
+        self.asteroidCount = 1;
+        
+        [self addAsteroids:self.asteroidCount];
         
         [self createShip];
         
@@ -92,9 +95,9 @@
     
 }
 
-- (void) addAsteroids {
+- (void) addAsteroids: (int) count {
     
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < count; i++){
         
         CGPoint pos = CGPointMake(arc4random_uniform(self.size.width), arc4random_uniform(self.size.height));
         CGVector impulse = CGVectorMake(arc4random_uniform(200)/100.0f, arc4random_uniform(200)/100.0f);
@@ -104,6 +107,7 @@
         
         SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:40.0f andPosition:pos];
         [self addChild:asteroid];
+        [self.asteroids addObject:asteroid];
         [asteroid.physicsBody applyImpulse:impulse];
         
     }
@@ -165,18 +169,26 @@
             NSLog(@"mImpulse2: (%0.2f,%0.2f)", mImpulse2.dx, mImpulse2.dy);
             
             SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:position1];
+            [self.asteroids addObject:asteroid];
             [self addChild:asteroid];
             [asteroid.physicsBody applyImpulse:mImpulse1];
             
             asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:position2];
+            [self.asteroids addObject:asteroid];
             [self addChild:asteroid];
             [asteroid.physicsBody applyImpulse:mImpulse2];
         }
         
+        [self.asteroids removeObject:shotAsteroid];
+        
         // Remove the nodes in question
         [self removeChildrenInArray:[NSArray arrayWithObjects:contact.bodyA.node,contact.bodyB.node,nil]];
         
-        // TODO: When there are no asteroids left, create some new big ones
+        // When there are no asteroids left, create some new big ones
+        if([self.asteroids count] == 0){
+            self.asteroidCount++;
+            [self addAsteroids:self.asteroidCount];
+        }
     }
     
     if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == shipCategory)
@@ -184,7 +196,9 @@
         NSLog(@"Ship crashed!");
         [self removeChildrenInArray:[NSArray arrayWithObject:self.ship]];
         
-        // TODO: Create a new ship after a brief period, or show game over if no more lives
+        // Create a new ship after a brief period
+        // TODO: Show game over if no more lives
+        [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(createShip) userInfo:nil repeats:NO];
     }
 }
 
