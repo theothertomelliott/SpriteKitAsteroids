@@ -273,6 +273,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Tom Elliott";
 				TargetAttributes = {
+					E218EA7918F2658800F7ACAD = {
+						DevelopmentTeam = XZ59JQ28M5;
+					};
 					E218EAA418F2658800F7ACAD = {
 						TestTargetID = E218EA7918F2658800F7ACAD;
 					};
@@ -469,10 +472,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
 				INFOPLIST_FILE = "SKMobileEx/SKMobileEx-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -483,10 +489,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
 				INFOPLIST_FILE = "SKMobileEx/SKMobileEx-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
