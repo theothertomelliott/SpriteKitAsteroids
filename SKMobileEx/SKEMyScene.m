@@ -195,6 +195,7 @@
        || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == shipCategory)){
         NSLog(@"Ship crashed!");
         [self removeChildrenInArray:[NSArray arrayWithObject:self.ship]];
+        self.ship = nil;
         
         // Create a new ship after a brief period
         // TODO: Show game over if no more lives
@@ -258,6 +259,7 @@
 - (void)checkButtons
 {
     
+    if(self.ship != nil){
     if (self.thrustButton.wasPressed) {
         [self.ship.physicsBody applyImpulse:
          CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],0.5f)];
@@ -275,6 +277,7 @@
     
     if(self.fireButton.wasPressed){
         [self fireMissile];
+    }
     }
 }
 
