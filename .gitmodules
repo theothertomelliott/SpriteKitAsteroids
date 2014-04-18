@@ -1,0 +1,3 @@
+[submodule "JCInput"]
+	path = JCInput
+	url = https://github.com/jsedano/JCInput.git
