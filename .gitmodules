@@ -1,3 +1,6 @@
 [submodule "JCInput"]
 	path = JCInput
 	url = https://github.com/jsedano/JCInput.git
+[submodule "CGVector-Awesome"]
+	path = CGVector-Awesome
+	url = https://github.com/samgreen/CGVector-Awesome.git

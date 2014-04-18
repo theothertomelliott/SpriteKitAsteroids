@@ -50,6 +50,7 @@
 		E2124FBA1900EE6F005F0A2A /* JCImageJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCImageJoystick.m; path = JCInput/JCInput/JCImageJoystick.m; sourceTree = "<group>"; };
 		E2124FBB1900EE6F005F0A2A /* JCJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCJoystick.h; path = JCInput/JCInput/JCJoystick.h; sourceTree = "<group>"; };
 		E2124FBC1900EE6F005F0A2A /* JCJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCJoystick.m; path = JCInput/JCInput/JCJoystick.m; sourceTree = "<group>"; };
+		E2124FC01900F0E3005F0A2A /* CGVectorAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CGVectorAdditions.h; path = "CGVector-Awesome/CGVectorAdditions.h"; sourceTree = "<group>"; };
 		E218EA7A18F2658800F7ACAD /* SKMobileEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKMobileEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218EA7D18F2658800F7ACAD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E218EA7F18F2658800F7ACAD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,7 +80,6 @@
 		E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
 		E24D8E1718FB943B000D6EBA /* SKEAsteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEAsteroid.h; sourceTree = "<group>"; };
 		E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEAsteroid.m; sourceTree = "<group>"; };
-		E252EBDA18FCD4AC003C7C19 /* CGVectorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGVectorAdditions.h; sourceTree = "<group>"; };
 		E252EBDD18FCD60A003C7C19 /* SKEMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEMissile.h; sourceTree = "<group>"; };
 		E252EBDE18FCD60A003C7C19 /* SKEMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEMissile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,7 +220,7 @@
 		E252EBD918FCD4A0003C7C19 /* CGVectorAwesome */ = {
 			isa = PBXGroup;
 			children = (
-				E252EBDA18FCD4AC003C7C19 /* CGVectorAdditions.h */,
+				E2124FC01900F0E3005F0A2A /* CGVectorAdditions.h */,
 			);
 			name = CGVectorAwesome;
 			sourceTree = "<group>";
