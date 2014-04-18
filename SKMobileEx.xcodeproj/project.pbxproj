@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2124FBD1900EE6F005F0A2A /* JCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2124FB81900EE6F005F0A2A /* JCButton.m */; };
+		E2124FBE1900EE6F005F0A2A /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E2124FBA1900EE6F005F0A2A /* JCImageJoystick.m */; };
+		E2124FBF1900EE6F005F0A2A /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E2124FBC1900EE6F005F0A2A /* JCJoystick.m */; };
 		E218EA7E18F2658800F7ACAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA7D18F2658800F7ACAD /* Foundation.framework */; };
 		E218EA8018F2658800F7ACAD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA7F18F2658800F7ACAD /* CoreGraphics.framework */; };
 		E218EA8218F2658800F7ACAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA8118F2658800F7ACAD /* UIKit.framework */; };
@@ -25,9 +28,6 @@
 		E218EAA918F2658800F7ACAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA8118F2658800F7ACAD /* UIKit.framework */; };
 		E218EAB118F2658800F7ACAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E218EAAF18F2658800F7ACAD /* InfoPlist.strings */; };
 		E218EAB318F2658800F7ACAD /* SKMobileExTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EAB218F2658800F7ACAD /* SKMobileExTests.m */; };
-		E24D8E0F18FB04F6000D6EBA /* JCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0A18FB04F6000D6EBA /* JCButton.m */; };
-		E24D8E1018FB04F6000D6EBA /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0C18FB04F6000D6EBA /* JCImageJoystick.m */; };
-		E24D8E1118FB04F6000D6EBA /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */; };
 		E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1418FB8D3D000D6EBA /* SKEShip.m */; };
 		E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */; };
 		E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = E252EBDE18FCD60A003C7C19 /* SKEMissile.m */; };
@@ -44,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2124FB71900EE6F005F0A2A /* JCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCButton.h; path = JCInput/JCInput/JCButton.h; sourceTree = "<group>"; };
+		E2124FB81900EE6F005F0A2A /* JCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCButton.m; path = JCInput/JCInput/JCButton.m; sourceTree = "<group>"; };
+		E2124FB91900EE6F005F0A2A /* JCImageJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCImageJoystick.h; path = JCInput/JCInput/JCImageJoystick.h; sourceTree = "<group>"; };
+		E2124FBA1900EE6F005F0A2A /* JCImageJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCImageJoystick.m; path = JCInput/JCInput/JCImageJoystick.m; sourceTree = "<group>"; };
+		E2124FBB1900EE6F005F0A2A /* JCJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCJoystick.h; path = JCInput/JCInput/JCJoystick.h; sourceTree = "<group>"; };
+		E2124FBC1900EE6F005F0A2A /* JCJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCJoystick.m; path = JCInput/JCInput/JCJoystick.m; sourceTree = "<group>"; };
 		E218EA7A18F2658800F7ACAD /* SKMobileEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKMobileEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218EA7D18F2658800F7ACAD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E218EA7F18F2658800F7ACAD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,12 +74,6 @@
 		E218EAAE18F2658800F7ACAD /* SKMobileExTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKMobileExTests-Info.plist"; sourceTree = "<group>"; };
 		E218EAB018F2658800F7ACAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E218EAB218F2658800F7ACAD /* SKMobileExTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKMobileExTests.m; sourceTree = "<group>"; };
-		E24D8E0918FB04F6000D6EBA /* JCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCButton.h; sourceTree = "<group>"; };
-		E24D8E0A18FB04F6000D6EBA /* JCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCButton.m; sourceTree = "<group>"; };
-		E24D8E0B18FB04F6000D6EBA /* JCImageJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCImageJoystick.h; sourceTree = "<group>"; };
-		E24D8E0C18FB04F6000D6EBA /* JCImageJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCImageJoystick.m; sourceTree = "<group>"; };
-		E24D8E0D18FB04F6000D6EBA /* JCJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCJoystick.h; sourceTree = "<group>"; };
-		E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCJoystick.m; sourceTree = "<group>"; };
 		E24D8E1318FB8D3D000D6EBA /* SKEShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEShip.h; sourceTree = "<group>"; };
 		E24D8E1418FB8D3D000D6EBA /* SKEShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEShip.m; sourceTree = "<group>"; };
 		E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
@@ -194,12 +194,12 @@
 		E24D8E0818FB04E9000D6EBA /* JCInput */ = {
 			isa = PBXGroup;
 			children = (
-				E24D8E0918FB04F6000D6EBA /* JCButton.h */,
-				E24D8E0A18FB04F6000D6EBA /* JCButton.m */,
-				E24D8E0B18FB04F6000D6EBA /* JCImageJoystick.h */,
-				E24D8E0C18FB04F6000D6EBA /* JCImageJoystick.m */,
-				E24D8E0D18FB04F6000D6EBA /* JCJoystick.h */,
-				E24D8E0E18FB04F6000D6EBA /* JCJoystick.m */,
+				E2124FB71900EE6F005F0A2A /* JCButton.h */,
+				E2124FB81900EE6F005F0A2A /* JCButton.m */,
+				E2124FB91900EE6F005F0A2A /* JCImageJoystick.h */,
+				E2124FBA1900EE6F005F0A2A /* JCImageJoystick.m */,
+				E2124FBB1900EE6F005F0A2A /* JCJoystick.h */,
+				E2124FBC1900EE6F005F0A2A /* JCJoystick.m */,
 			);
 			name = JCInput;
 			sourceTree = "<group>";
@@ -328,16 +328,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2124FBF1900EE6F005F0A2A /* JCJoystick.m in Sources */,
+				E2124FBE1900EE6F005F0A2A /* JCImageJoystick.m in Sources */,
 				E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */,
 				E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */,
-				E24D8E1018FB04F6000D6EBA /* JCImageJoystick.m in Sources */,
 				E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */,
 				E218EA9018F2658800F7ACAD /* SKEAppDelegate.m in Sources */,
 				E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */,
 				E218EA9C18F2658800F7ACAD /* SKEMyScene.m in Sources */,
+				E2124FBD1900EE6F005F0A2A /* JCButton.m in Sources */,
 				E218EA8C18F2658800F7ACAD /* main.m in Sources */,
-				E24D8E0F18FB04F6000D6EBA /* JCButton.m in Sources */,
-				E24D8E1118FB04F6000D6EBA /* JCJoystick.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
