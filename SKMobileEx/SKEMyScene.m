@@ -46,7 +46,7 @@
         [self createButtons:size];
          
         //scheduling the action to check buttons
-        SKAction *wait = [SKAction waitForDuration:0.3f];
+        SKAction *wait = [SKAction waitForDuration:0.1f];
         SKAction *checkButtons = [SKAction runBlock:^{
             [self checkButtons];
         }];
@@ -216,21 +216,21 @@
 
 - (void) createButtons:(CGSize) size{
 
-    self.thrustButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor greenColor] pressedColor:[SKColor blackColor] isTurbo:NO];
+    self.thrustButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor greenColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
     [self.thrustButton setPosition:CGPointMake(size.width - 40,95)];
     [self addChild:self.thrustButton];
 
     
-    self.leftButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO];
+    self.leftButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
     [self.leftButton setPosition:CGPointMake(20,45)];
     [self addChild:self.leftButton];
 
     
-    self.rightButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO];
+    self.rightButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
     [self.rightButton setPosition:CGPointMake(75,45)];
     [self addChild:self.rightButton];
     
-    self.fireButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO];
+    self.fireButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
     [self.fireButton setPosition:CGPointMake(size.width - 70,45)];
     [self addChild:self.fireButton];
     
@@ -266,12 +266,12 @@
     }
     
     if (self.leftButton.wasPressed) {
-        SKAction *action = [SKAction rotateByAngle:0.5 duration:0.3];
+        SKAction *action = [SKAction rotateByAngle:0.1 duration:0.1];
         [self.ship runAction:[SKAction repeatAction:action count:1]];
     }
     
     if (self.rightButton.wasPressed) {
-        SKAction *action = [SKAction rotateByAngle:-0.5 duration:0.3];
+        SKAction *action = [SKAction rotateByAngle:-0.1 duration:0.1];
         [self.ship runAction:[SKAction repeatAction:action count:1]];
     }
     
