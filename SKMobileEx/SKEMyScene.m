@@ -155,8 +155,8 @@
             CGPoint position1 = CGPointMake(shotAsteroid.position.x + mPerp.dx*fragmentDist, shotAsteroid.position.y + mPerp.dy*fragmentDist);
             CGPoint position2 = CGPointMake(shotAsteroid.position.x - mPerp.dx*fragmentDist, shotAsteroid.position.y - mPerp.dy*fragmentDist);
             
-            CGVector mImpulse1 = CGVectorMultiplyByScalar(mPerp, 2.0f);
-            CGVector mImpulse2 = CGVectorMultiplyByScalar(mPerp, -2.0f);
+            CGVector mImpulse1 = CGVectorMultiplyByScalar(mPerp, 0.5f);
+            CGVector mImpulse2 = CGVectorMultiplyByScalar(mPerp, -0.5f);
             
             NSLog(@"mImpulse1: (%0.2f,%0.2f)", mImpulse1.dx, mImpulse1.dy);
             NSLog(@"mImpulse2: (%0.2f,%0.2f)", mImpulse2.dx, mImpulse2.dy);
@@ -271,16 +271,16 @@
     if(self.ship != nil){
         if (self.thrustButton.wasPressed) {
             [self.ship.physicsBody applyImpulse:
-             CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],0.5f)];
+             CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],0.1f)];
         }
         
         if (self.leftButton.wasPressed) {
-            SKAction *action = [SKAction rotateByAngle:0.1 duration:0.1];
+            SKAction *action = [SKAction rotateByAngle:0.2 duration:0.1];
             [self.ship runAction:[SKAction repeatAction:action count:1]];
         }
         
         if (self.rightButton.wasPressed) {
-            SKAction *action = [SKAction rotateByAngle:-0.1 duration:0.1];
+            SKAction *action = [SKAction rotateByAngle:-0.2 duration:0.1];
             [self.ship runAction:[SKAction repeatAction:action count:1]];
         }
     }
