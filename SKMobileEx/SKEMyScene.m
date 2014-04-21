@@ -44,16 +44,7 @@
         [self createShip];
         
         [self createButtons:size];
-         
-        //scheduling the action to check buttons
-        SKAction *wait = [SKAction waitForDuration:0.1f];
-        SKAction *checkButtons = [SKAction runBlock:^{
-            [self checkButtons];
-        }];
-        
-        SKAction *checkButtonsAction = [SKAction sequence:@[wait,checkButtons]];
-        [self runAction:[SKAction repeatActionForever:checkButtonsAction]];
-       
+
     }
     return self;
 }
@@ -234,6 +225,23 @@
     [self.fireButton setPosition:CGPointMake(size.width - 70,45)];
     [self addChild:self.fireButton];
     
+    //scheduling the action to check movement buttons
+    SKAction *movementWait = [SKAction waitForDuration:0.1f];
+    SKAction *checkMovementButtons = [SKAction runBlock:^{
+        [self handleMovement];
+    }];
+    
+    SKAction *checkMovementButtonsAction = [SKAction sequence:@[movementWait,checkMovementButtons]];
+    [self runAction:[SKAction repeatActionForever:checkMovementButtonsAction]];
+    
+    //scheduling the action to check firing buttons
+    SKAction *firingWait = [SKAction waitForDuration:0.3f];
+    SKAction *checkFiringButtons = [SKAction runBlock:^{
+        [self handleFiring];
+    }];
+    
+    SKAction *checkFiringButtonsAction = [SKAction sequence:@[firingWait,checkFiringButtons]];
+    [self runAction:[SKAction repeatActionForever:checkFiringButtonsAction]];
 }
 
 - (CGVector)convertAngleToVector:(CGFloat)radians {
@@ -256,25 +264,30 @@
 
 }
 
-- (void)checkButtons
+- (void) handleMovement {
+    if(self.ship != nil){
+        if (self.thrustButton.wasPressed) {
+            [self.ship.physicsBody applyImpulse:
+             CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],0.5f)];
+        }
+        
+        if (self.leftButton.wasPressed) {
+            SKAction *action = [SKAction rotateByAngle:0.1 duration:0.1];
+            [self.ship runAction:[SKAction repeatAction:action count:1]];
+        }
+        
+        if (self.rightButton.wasPressed) {
+            SKAction *action = [SKAction rotateByAngle:-0.1 duration:0.1];
+            [self.ship runAction:[SKAction repeatAction:action count:1]];
+        }
+    }
+
+}
+
+- (void)handleFiring
 {
     
     if(self.ship != nil){
-    if (self.thrustButton.wasPressed) {
-        [self.ship.physicsBody applyImpulse:
-         CGVectorMultiplyByScalar([self convertAngleToVector:self.ship.zRotation],0.5f)];
-    }
-    
-    if (self.leftButton.wasPressed) {
-        SKAction *action = [SKAction rotateByAngle:0.1 duration:0.1];
-        [self.ship runAction:[SKAction repeatAction:action count:1]];
-    }
-    
-    if (self.rightButton.wasPressed) {
-        SKAction *action = [SKAction rotateByAngle:-0.1 duration:0.1];
-        [self.ship runAction:[SKAction repeatAction:action count:1]];
-    }
-    
     if(self.fireButton.wasPressed){
         [self fireMissile];
     }
