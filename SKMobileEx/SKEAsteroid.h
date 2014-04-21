@@ -8,10 +8,16 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#define ASTEROID_TYPE_SMALL 0
+#define ASTEROID_TYPE_MEDIUM 1
+#define ASTEROID_TYPE_LARGE 2
+
 @interface SKEAsteroid : SKShapeNode
 
--(id)initWithRadius:(CGFloat) radius andPosition:(CGPoint) position;
+-(id)initWithType:(int) type position:(CGPoint) position;
 
+@property (nonatomic) int type;
 @property (nonatomic) CGFloat radius;
+@property (nonatomic) int score;
 
 @end

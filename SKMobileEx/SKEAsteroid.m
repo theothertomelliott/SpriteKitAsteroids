@@ -11,19 +11,31 @@
 
 @implementation SKEAsteroid
 
--(id)initWithRadius:(CGFloat) radius andPosition:(CGPoint)position {
+-(id)initWithType:(int) type position:(CGPoint) position {
     if((self = [super init]))
     {
-        self.radius = radius;
+        self.type = type;
+        if(type == ASTEROID_TYPE_SMALL){
+            self.radius = 10;
+            self.score = 100;
+        }
+        else if(type == ASTEROID_TYPE_MEDIUM){
+            self.radius = 20;
+            self.score = 50;
+        }
+        else if(type == ASTEROID_TYPE_LARGE){
+            self.radius = 40;
+            self.score = 20;
+        }
         [self setPosition:position];
         
         CGMutablePathRef circlePath = CGPathCreateMutable();
-        CGPathAddEllipseInRect(circlePath , NULL , CGRectMake(-radius, -radius, radius*2, radius*2) );
+        CGPathAddEllipseInRect(circlePath , NULL , CGRectMake(-self.radius, -self.radius, self.radius*2, self.radius*2) );
         self.path = circlePath;
         self.fillColor =  [SKColor whiteColor];
         self.lineWidth=0;
         
-        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.radius];
         //self.physicsBody.velocity = CGVectorMake(10.0f, 5.0f);
         
         self.physicsBody.usesPreciseCollisionDetection = YES;

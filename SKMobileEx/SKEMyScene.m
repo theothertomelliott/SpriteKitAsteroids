@@ -96,7 +96,7 @@
         NSLog(@"Asteroid Position: (%0.2f,%0.2f)",pos.x,pos.y);
         NSLog(@"Asteroid impulse: (%0.2f,%0.2f)",impulse.dx,impulse.dy);
         
-        SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:40.0f andPosition:pos];
+        SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithType:ASTEROID_TYPE_LARGE position:pos];
         [self addChild:asteroid];
         [self.asteroids addObject:asteroid];
         [asteroid.physicsBody applyImpulse:impulse];
@@ -141,7 +141,9 @@
         
         SKEAsteroid* shotAsteroid = (SKEAsteroid*)  (contact.bodyA.categoryBitMask == asteroidCategory ? contact.bodyA.node : contact.bodyB.node);
         
-        if(shotAsteroid.radius > 10){
+        self.score += shotAsteroid.score;
+        
+        if(shotAsteroid.type > 0){
             
             SKEMissile* missile = (SKEMissile*)  (contact.bodyA.categoryBitMask == missileCategory ? contact.bodyA.node : contact.bodyB.node);
 
@@ -159,12 +161,12 @@
             NSLog(@"mImpulse1: (%0.2f,%0.2f)", mImpulse1.dx, mImpulse1.dy);
             NSLog(@"mImpulse2: (%0.2f,%0.2f)", mImpulse2.dx, mImpulse2.dy);
             
-            SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:position1];
+            SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithType:shotAsteroid.type-1 position:position1];
             [self.asteroids addObject:asteroid];
             [self addChild:asteroid];
             [asteroid.physicsBody applyImpulse:mImpulse1];
             
-            asteroid = [[SKEAsteroid alloc] initWithRadius:shotAsteroid.radius/2 andPosition:position2];
+            asteroid = [[SKEAsteroid alloc] initWithType:shotAsteroid.type-1 position:position2];
             [self.asteroids addObject:asteroid];
             [self addChild:asteroid];
             [asteroid.physicsBody applyImpulse:mImpulse2];
@@ -202,6 +204,7 @@
 
 - (void)didSimulatePhysics
 {
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.score];
 }
 
 

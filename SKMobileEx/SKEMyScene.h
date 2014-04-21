@@ -19,6 +19,7 @@
 @property (strong, nonatomic) JCButton *rightButton;
 
 @property (strong, nonatomic) SKEShip* ship;
+@property (nonatomic) int score;
 @property (strong, nonatomic) SKLabelNode* scoreLabel;
 @property (nonatomic) int asteroidCount;
 @property (strong, nonatomic) NSMutableArray* asteroids;
