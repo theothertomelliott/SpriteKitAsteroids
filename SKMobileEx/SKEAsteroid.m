@@ -16,15 +16,15 @@
     {
         self.type = type;
         if(type == ASTEROID_TYPE_SMALL){
-            self.radius = 10;
+            self.radius = 5;
             self.score = 100;
         }
         else if(type == ASTEROID_TYPE_MEDIUM){
-            self.radius = 20;
+            self.radius = 10;
             self.score = 50;
         }
         else if(type == ASTEROID_TYPE_LARGE){
-            self.radius = 40;
+            self.radius = 20;
             self.score = 20;
         }
         [self setPosition:position];
@@ -36,7 +36,7 @@
         self.lineWidth=0;
         
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.radius];
-        //self.physicsBody.velocity = CGVectorMake(10.0f, 5.0f);
+        self.physicsBody.friction = 0.0f;
         
         self.physicsBody.usesPreciseCollisionDetection = YES;
         self.physicsBody.categoryBitMask = asteroidCategory;

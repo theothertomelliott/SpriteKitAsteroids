@@ -16,8 +16,8 @@
         //self.position = CGPointMake(self.size.width/2,self.size.height/2);
         
         CGSize size = self.size;
-        size.height = size.height/8;
-        size.width = size.width/8;
+        size.height = 20;
+        size.width = 20;
         [self setSize:size];
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.frame.size.width/2];
         self.physicsBody.usesPreciseCollisionDetection = YES;
