@@ -49,6 +49,9 @@
     return self;
 }
 
+/*
+ * Add bodies on each edge of the scene to handle wraparound
+ */
 - (void) createWorldBorder {
     
     SKNode* topBorder = [SKNode node];
@@ -86,6 +89,9 @@
     
 }
 
+/*
+ * Add (count) asteroids to the scene
+ */
 - (void) addAsteroids: (int) count {
     
     for(int i = 0; i < count; i++){
@@ -105,10 +111,17 @@
     
 }
 
+/*
+ * Handle contact between two entities
+ */
 - (void) didBeginContact:(SKPhysicsContact *)contact
 {
-    NSLog(@"Collision");
     
+    /*
+     * Handle contact with an edge for wraparound behaviour
+     */
+    
+    // Distance from the edge which a body should be re-introduced to the scene
     CGFloat distance = contact.bodyB.node.frame.size.width/2 + 5.0f;
     
     if(contact.bodyA.categoryBitMask == borderTop){
@@ -134,6 +147,10 @@
         SKAction *moveTop = [SKAction moveTo:CGPointMake(contact.bodyB.node.position.x, self.size.height-distance) duration:0.0f];
         [contact.bodyB.node runAction:moveTop];
     }
+    
+    /*
+     * Handle an asteroid being hit by a missile
+     */
     
     if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == missileCategory)
     || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == missileCategory)){
@@ -184,6 +201,10 @@
         }
     }
     
+    /*
+     * Handle the ship colliding with an asteroid
+     */
+    
     if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == shipCategory)
        || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == shipCategory)){
         NSLog(@"Ship crashed!");
@@ -196,18 +217,18 @@
     }
 }
 
+/*
+ * Add a ship to the scene
+ */
 - (void) createShip {
     self.ship = [[SKEShip alloc] initDefault];
     [self.ship setPosition:CGPointMake(self.size.width/2,self.size.height/2)];
     [self addChild:self.ship];
 }
 
-- (void)didSimulatePhysics
-{
-    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.score];
-}
-
-
+/*
+ * Add buttons to the scene and add actions for checking touches
+ */
 - (void) createButtons:(CGSize) size{
 
     self.thrustButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor greenColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
@@ -267,6 +288,9 @@
 
 }
 
+/*
+ * Process movement related button presses
+ */
 - (void) handleMovement {
     if(self.ship != nil){
         if (self.thrustButton.wasPressed) {
@@ -287,21 +311,23 @@
 
 }
 
+/*
+ * Process firing-related button presses
+ */
 - (void)handleFiring
 {
-    
     if(self.ship != nil){
-    if(self.fireButton.wasPressed){
-        [self fireMissile];
-    }
+        if(self.fireButton.wasPressed){
+            [self fireMissile];
+        }
     }
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-}
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    // Update the score on screen
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.score];
 }
 
 @end
