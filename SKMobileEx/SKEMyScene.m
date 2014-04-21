@@ -50,43 +50,27 @@
 }
 
 /*
+ * Create a border between the specified points to handle wraparound
+ */
+- (void) addBorderFromPoint:(CGPoint)from toPoint:(CGPoint) to withCategory:(int)category {
+    
+    SKNode* border = [SKNode node];
+    border.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:from toPoint:to];
+    border.physicsBody.usesPreciseCollisionDetection = YES;
+    border.physicsBody.categoryBitMask = category;
+    border.physicsBody.collisionBitMask = 0;
+    border.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+    [self addChild:border];
+}
+
+/*
  * Add bodies on each edge of the scene to handle wraparound
  */
 - (void) createWorldBorder {
-    
-    SKNode* topBorder = [SKNode node];
-    topBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,self.size.height) toPoint:CGPointMake(self.size.width,self.size.height)];
-    topBorder.physicsBody.usesPreciseCollisionDetection = YES;
-    topBorder.physicsBody.categoryBitMask = borderTop;
-    topBorder.physicsBody.collisionBitMask = 0;
-    topBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
-    [self addChild:topBorder];
-
-    SKNode* bottomBorder = [SKNode node];
-    bottomBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0.0f,0.0f) toPoint:CGPointMake(self.size.width,0.0f)];
-    bottomBorder.physicsBody.usesPreciseCollisionDetection = YES;
-    bottomBorder.physicsBody.categoryBitMask = borderBottom;
-    bottomBorder.physicsBody.collisionBitMask = 0;
-    bottomBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
-    [self addChild:bottomBorder];
-    
-    SKNode* leftBorder = [SKNode node];
-    leftBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0.0f,0.0f) toPoint:CGPointMake(0.0f,self.size.height)];
-    leftBorder.physicsBody.usesPreciseCollisionDetection = YES;
-    leftBorder.physicsBody.categoryBitMask = borderLeft;
-    leftBorder.physicsBody.collisionBitMask = 0;
-    leftBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
-    [self addChild:leftBorder];
-    
-    SKNode* rightBorder = [SKNode node];
-    rightBorder.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(self.size.width,0.0f) toPoint:CGPointMake(self.size.width,self.size.height)];
-    rightBorder.physicsBody.usesPreciseCollisionDetection = YES;
-    rightBorder.physicsBody.categoryBitMask = borderRight;
-    rightBorder.physicsBody.collisionBitMask = 0;
-    rightBorder.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
-    [self addChild:rightBorder];
-    
-    
+    [self addBorderFromPoint:CGPointMake(0,self.size.height) toPoint:CGPointMake(self.size.width,self.size.height) withCategory:borderTop];
+    [self addBorderFromPoint:CGPointMake(0.0f,0.0f) toPoint:CGPointMake(self.size.width,0.0f) withCategory:borderBottom];
+    [self addBorderFromPoint:CGPointMake(0.0f,0.0f) toPoint:CGPointMake(0.0f,self.size.height) withCategory:borderLeft];
+    [self addBorderFromPoint:CGPointMake(self.size.width,0.0f) toPoint:CGPointMake(self.size.width,self.size.height) withCategory:borderRight];
 }
 
 /*
