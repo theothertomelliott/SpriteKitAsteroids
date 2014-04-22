@@ -229,6 +229,7 @@
     for(SKEAsteroid* a in self.asteroids){
         if([self.ship intersectsNode:a]){
             [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(createShip) userInfo:nil repeats:NO];
+            self.ship = nil;
             return;
         }
     }
