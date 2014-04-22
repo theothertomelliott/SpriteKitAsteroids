@@ -222,8 +222,16 @@
  * Add a ship to the scene
  */
 - (void) createShip {
+    
     self.ship = [[SKEShip alloc] initDefault];
     [self.ship setPosition:CGPointMake(self.size.width/2,self.size.height/2)];
+    // Ensure the ship isn't going to be created where there are asteroids
+    for(SKEAsteroid* a in self.asteroids){
+        if([self.ship intersectsNode:a]){
+            [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(createShip) userInfo:nil repeats:NO];
+            return;
+        }
+    }
     [self addChild:self.ship];
 }
 
