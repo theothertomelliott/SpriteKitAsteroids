@@ -39,9 +39,9 @@
         self.asteroids = [NSMutableArray array];
         self.asteroidCount = 1;
         
-        [self addAsteroids:self.asteroidCount];
-        
         [self createShip];
+        
+        [self addAsteroids:self.asteroidCount];
         
         [self createButtons:size];
 
@@ -78,9 +78,26 @@
  */
 - (void) addAsteroids: (int) count {
     
+    // Establish a "safe zone" around the ship where asteroids cannot be added
+    int shipbound_x1 = self.ship.position.x - self.ship.size.width;
+    int shipbound_x2 = self.ship.position.x + self.ship.size.width;
+    int shipbound_y1 = self.ship.position.y - self.ship.size.height;
+    int shipbound_y2 = self.ship.position.y + self.ship.size.height;
+    
     for(int i = 0; i < count; i++){
         
-        CGPoint pos = CGPointMake(arc4random_uniform(self.size.width), arc4random_uniform(self.size.height));
+        // Generate 4 random coordinates for the asteroid, 2 x and 2 y
+        int xpos1 = arc4random_uniform(shipbound_x1);
+        int ypos1 = arc4random_uniform(shipbound_y1);
+        int xpos2 = shipbound_x2 + arc4random_uniform(self.size.width - shipbound_x2);
+        int ypos2 = shipbound_y2 + arc4random_uniform(self.size.height - shipbound_y2);
+        
+        // Select one each of the x and y coordinates and create position
+        int xpos = arc4random_uniform(100) < 50 ? xpos1 : xpos2;
+        int ypos = arc4random_uniform(100) < 50 ? ypos1 : ypos2;
+        CGPoint pos = CGPointMake(xpos, ypos);
+        
+        // Apply a random impulse to get the asteroid moving
         CGVector impulse = CGVectorMake(arc4random_uniform(200)/100.0f, arc4random_uniform(200)/100.0f);
         
         NSLog(@"Asteroid Position: (%0.2f,%0.2f)",pos.x,pos.y);
