@@ -9,6 +9,8 @@
 #import <SpriteKit/SpriteKit.h>
 #import "CollisionCategories.h"
 
+#define SHOW_DIRECTION false
+
 @interface SKEShip : SKSpriteNode
 
 -(id)initDefault;

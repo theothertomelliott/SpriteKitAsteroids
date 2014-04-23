@@ -13,8 +13,6 @@
 -(id)initDefault {
     if((self = [super initWithImageNamed:@"Spaceship"]))
     {
-        //self.position = CGPointMake(self.size.width/2,self.size.height/2);
-        
         CGSize size = self.size;
         size.height = 20;
         size.width = 20;
@@ -31,12 +29,14 @@
         //self.shipDirection.position = self.position;
         CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
         
-        CGVector thrustDirection =  CGVectorMake(0.0f, 100.0f);
+        if(SHOW_DIRECTION){
+            CGVector thrustDirection =  CGVectorMake(0.0f, 100.0f);
         
-        CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);
-        self.shipDirection.path = pathToDraw;
-        [self.shipDirection setStrokeColor:[SKColor redColor]];
-        [self addChild:self.shipDirection];
+            CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);
+            self.shipDirection.path = pathToDraw;
+            [self.shipDirection setStrokeColor:[SKColor redColor]];
+            [self addChild:self.shipDirection];
+        }
 
     }
     return self;
