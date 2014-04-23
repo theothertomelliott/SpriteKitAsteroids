@@ -24,12 +24,21 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        self.scoreLabel.text = @"00000";
-        self.scoreLabel.fontSize = 24;
-        self.scoreLabel.position = CGPointMake(self.frame.size.width - 100,
+        self.scoreLabel.text = @"Score: 0";
+        self.scoreLabel.fontSize = 16;
+        self.scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+        self.scoreLabel.position = CGPointMake(self.frame.size.width - 20,
                                           self.frame.size.height - 20);
-        
         [self addChild:self.scoreLabel];
+        
+        self.livesLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+        self.livesLabel.text = @"Lives: 0";
+        self.livesLabel.fontSize = 16;
+        self.livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+        self.livesLabel.position = CGPointMake(20,
+                                               self.frame.size.height - 20);
+        
+        [self addChild:self.livesLabel];
         
         [self createWorldBorder];
         
@@ -37,7 +46,8 @@
         self.physicsWorld.contactDelegate = self;
         
         self.asteroids = [NSMutableArray array];
-        self.asteroidCount = 1;
+        
+        [self initGame];
         
         [self createShip];
         
@@ -47,6 +57,15 @@
 
     }
     return self;
+}
+
+/**
+ * Initialize the game with 3 lives and 1 asteroid
+ */
+- (void) initGame {
+    self.asteroidCount = 1;
+    self.lives = 3;
+    self.score = 0;
 }
 
 /*
@@ -213,8 +232,12 @@
         self.ship = nil;
         
         // Create a new ship after a brief period
-        // TODO: Show game over if no more lives
-        [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(createShip) userInfo:nil repeats:NO];
+        self.lives -= 1;
+        if(self.lives > 0){
+            [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(createShip) userInfo:nil repeats:NO];
+        } else {
+            // TODO: Display game over
+        }
     }
 }
 
@@ -337,7 +360,9 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     // Update the score on screen
-    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.score];
+    self.livesLabel.text = [NSString stringWithFormat:@"Lives: %d", self.lives];
+
 }
 
 @end

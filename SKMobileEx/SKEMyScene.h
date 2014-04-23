@@ -13,15 +13,23 @@
 
 @interface SKEMyScene : SKScene <SKPhysicsContactDelegate>
 
+// Game state
+@property (nonatomic) int score;
+@property (nonatomic) int lives;
+@property (nonatomic) int asteroidCount;
+
+// Controls
 @property (strong, nonatomic) JCButton *fireButton;
 @property (strong, nonatomic) JCButton *thrustButton;
 @property (strong, nonatomic) JCButton *leftButton;
 @property (strong, nonatomic) JCButton *rightButton;
 
+// Entities in play
 @property (strong, nonatomic) SKEShip* ship;
-@property (nonatomic) int score;
-@property (strong, nonatomic) SKLabelNode* scoreLabel;
-@property (nonatomic) int asteroidCount;
 @property (strong, nonatomic) NSMutableArray* asteroids;
+
+// Labels and other indicators
+@property (strong, nonatomic) SKLabelNode* scoreLabel;
+@property (strong, nonatomic) SKLabelNode* livesLabel;
 
 @end
