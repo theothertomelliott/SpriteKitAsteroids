@@ -25,8 +25,20 @@
     SKScene * scene = [SKEMyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        // iOS 7
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    } else {
+        // iOS 6
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    }
+    
     // Present the scene.
     [skView presentScene:scene];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (BOOL)shouldAutorotate
