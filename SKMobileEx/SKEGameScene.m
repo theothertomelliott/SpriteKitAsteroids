@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 Tom Elliott. All rights reserved.
 //
 
-#import "SKEMyScene.h"
+#import "SKEGameScene.h"
 #import "SKEAsteroid.h"
 #import "SKEMissile.h"
+#import "SKEMenuScene.h"
 #import "CGVectorAdditions.h"
 #include <stdlib.h>
 
-@implementation SKEMyScene
+@implementation SKEGameScene
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -236,7 +237,11 @@
         if(self.lives > 0){
             [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(createShip) userInfo:nil repeats:NO];
         } else {
-            // TODO: Display game over
+            // Display game over
+            SKScene * scene = [[SKEMenuScene alloc] initWithSize:self.view.bounds.size title:@"Game Over"];
+            scene.scaleMode = SKSceneScaleModeAspectFill;
+            // Present the scene.
+            [self.view presentScene:scene];
         }
     }
 }

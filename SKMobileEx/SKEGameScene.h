@@ -11,7 +11,7 @@
 #import "CollisionCategories.h"
 #import "SKEShip.h"
 
-@interface SKEMyScene : SKScene <SKPhysicsContactDelegate>
+@interface SKEGameScene : SKScene <SKPhysicsContactDelegate>
 
 // Game state
 @property (nonatomic) int score;

@@ -20,7 +20,7 @@
 		E218EA9318F2658800F7ACAD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9118F2658800F7ACAD /* Main_iPhone.storyboard */; };
 		E218EA9618F2658800F7ACAD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9418F2658800F7ACAD /* Main_iPad.storyboard */; };
 		E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EA9818F2658800F7ACAD /* SKEViewController.m */; };
-		E218EA9C18F2658800F7ACAD /* SKEMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EA9B18F2658800F7ACAD /* SKEMyScene.m */; };
+		E218EA9C18F2658800F7ACAD /* SKEGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EA9B18F2658800F7ACAD /* SKEGameScene.m */; };
 		E218EA9E18F2658800F7ACAD /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9D18F2658800F7ACAD /* Spaceship.png */; };
 		E218EAA018F2658800F7ACAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E218EA9F18F2658800F7ACAD /* Images.xcassets */; };
 		E218EAA718F2658800F7ACAD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EAA618F2658800F7ACAD /* XCTest.framework */; };
@@ -31,6 +31,7 @@
 		E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1418FB8D3D000D6EBA /* SKEShip.m */; };
 		E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */; };
 		E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = E252EBDE18FCD60A003C7C19 /* SKEMissile.m */; };
+		E261D2A5190B44310097B88F /* SKEMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E261D2A4190B44310097B88F /* SKEMenuScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +67,8 @@
 		E218EA9518F2658800F7ACAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		E218EA9718F2658800F7ACAD /* SKEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEViewController.h; sourceTree = "<group>"; };
 		E218EA9818F2658800F7ACAD /* SKEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEViewController.m; sourceTree = "<group>"; };
-		E218EA9A18F2658800F7ACAD /* SKEMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEMyScene.h; sourceTree = "<group>"; };
-		E218EA9B18F2658800F7ACAD /* SKEMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEMyScene.m; sourceTree = "<group>"; };
+		E218EA9A18F2658800F7ACAD /* SKEGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEGameScene.h; sourceTree = "<group>"; };
+		E218EA9B18F2658800F7ACAD /* SKEGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEGameScene.m; sourceTree = "<group>"; };
 		E218EA9D18F2658800F7ACAD /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		E218EA9F18F2658800F7ACAD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E218EAA518F2658800F7ACAD /* SKMobileExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKMobileExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +83,8 @@
 		E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEAsteroid.m; sourceTree = "<group>"; };
 		E252EBDD18FCD60A003C7C19 /* SKEMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEMissile.h; sourceTree = "<group>"; };
 		E252EBDE18FCD60A003C7C19 /* SKEMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEMissile.m; sourceTree = "<group>"; };
+		E261D2A3190B44310097B88F /* SKEMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEMenuScene.h; sourceTree = "<group>"; };
+		E261D2A4190B44310097B88F /* SKEMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEMenuScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,10 +156,12 @@
 				E218EA9418F2658800F7ACAD /* Main_iPad.storyboard */,
 				E218EA9718F2658800F7ACAD /* SKEViewController.h */,
 				E218EA9818F2658800F7ACAD /* SKEViewController.m */,
-				E218EA9A18F2658800F7ACAD /* SKEMyScene.h */,
-				E218EA9B18F2658800F7ACAD /* SKEMyScene.m */,
+				E218EA9A18F2658800F7ACAD /* SKEGameScene.h */,
+				E218EA9B18F2658800F7ACAD /* SKEGameScene.m */,
 				E218EA9D18F2658800F7ACAD /* Spaceship.png */,
 				E218EA9F18F2658800F7ACAD /* Images.xcassets */,
+				E261D2A3190B44310097B88F /* SKEMenuScene.h */,
+				E261D2A4190B44310097B88F /* SKEMenuScene.m */,
 				E218EA8618F2658800F7ACAD /* Supporting Files */,
 			);
 			path = SKMobileEx;
@@ -331,11 +336,12 @@
 				E2124FBF1900EE6F005F0A2A /* JCJoystick.m in Sources */,
 				E2124FBE1900EE6F005F0A2A /* JCImageJoystick.m in Sources */,
 				E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */,
+				E261D2A5190B44310097B88F /* SKEMenuScene.m in Sources */,
 				E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */,
 				E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */,
 				E218EA9018F2658800F7ACAD /* SKEAppDelegate.m in Sources */,
 				E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */,
-				E218EA9C18F2658800F7ACAD /* SKEMyScene.m in Sources */,
+				E218EA9C18F2658800F7ACAD /* SKEGameScene.m in Sources */,
 				E2124FBD1900EE6F005F0A2A /* JCButton.m in Sources */,
 				E218EA8C18F2658800F7ACAD /* main.m in Sources */,
 			);

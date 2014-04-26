@@ -7,7 +7,8 @@
 //
 
 #import "SKEViewController.h"
-#import "SKEMyScene.h"
+#import "SKEGameScene.h"
+#import "SKEMenuScene.h"
 
 @implementation SKEViewController
 
@@ -22,7 +23,7 @@
     skView.showsPhysics = NO;
     
     // Create and configure the scene.
-    SKScene * scene = [SKEMyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [[SKEMenuScene alloc] initWithSize:skView.bounds.size title:@"Asteroids"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
