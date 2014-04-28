@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E211D94D190DDFFA00811832 /* SKEWrappingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E211D94C190DDFFA00811832 /* SKEWrappingScene.m */; };
 		E2124FBD1900EE6F005F0A2A /* JCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2124FB81900EE6F005F0A2A /* JCButton.m */; };
 		E2124FBE1900EE6F005F0A2A /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E2124FBA1900EE6F005F0A2A /* JCImageJoystick.m */; };
 		E2124FBF1900EE6F005F0A2A /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = E2124FBC1900EE6F005F0A2A /* JCJoystick.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E211D94B190DDFFA00811832 /* SKEWrappingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEWrappingScene.h; sourceTree = "<group>"; };
+		E211D94C190DDFFA00811832 /* SKEWrappingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEWrappingScene.m; sourceTree = "<group>"; };
 		E2124FB71900EE6F005F0A2A /* JCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCButton.h; path = JCInput/JCInput/JCButton.h; sourceTree = "<group>"; };
 		E2124FB81900EE6F005F0A2A /* JCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCButton.m; path = JCInput/JCInput/JCButton.m; sourceTree = "<group>"; };
 		E2124FB91900EE6F005F0A2A /* JCImageJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCImageJoystick.h; path = JCInput/JCInput/JCImageJoystick.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				E261D2A3190B44310097B88F /* SKEMenuScene.h */,
 				E261D2A4190B44310097B88F /* SKEMenuScene.m */,
 				E218EA8618F2658800F7ACAD /* Supporting Files */,
+				E211D94B190DDFFA00811832 /* SKEWrappingScene.h */,
+				E211D94C190DDFFA00811832 /* SKEWrappingScene.m */,
 			);
 			path = SKMobileEx;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */,
 				E218EA9C18F2658800F7ACAD /* SKEGameScene.m in Sources */,
 				E2124FBD1900EE6F005F0A2A /* JCButton.m in Sources */,
+				E211D94D190DDFFA00811832 /* SKEWrappingScene.m in Sources */,
 				E218EA8C18F2658800F7ACAD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

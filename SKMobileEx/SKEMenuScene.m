@@ -8,6 +8,7 @@
 
 #import "SKEMenuScene.h"
 #import "SKEGameScene.h"
+#import "SKEAsteroid.h"
 
 @implementation SKEMenuScene
 
@@ -17,6 +18,10 @@
         NSLog(@"Initializing scene");
         
         /* Setup your scene here */
+        
+        self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
+        
+        [self addAsteroids:4];
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
@@ -40,6 +45,24 @@
         
     }
     return self;
+}
+
+- (void) addAsteroids:(int) count {
+    for(int i = 0; i < count; i++){
+        
+        // Select one each of the x and y coordinates and create position
+        int xpos = arc4random_uniform(self.size.width);
+        int ypos = arc4random_uniform(self.size.height);
+        CGPoint pos = CGPointMake(xpos, ypos);
+        
+        // Apply a random impulse to get the asteroid moving
+        CGVector impulse = CGVectorMake(arc4random_uniform(200)/100.0f, arc4random_uniform(200)/100.0f);
+        
+        SKEAsteroid* asteroid = [[SKEAsteroid alloc] initWithType:ASTEROID_TYPE_LARGE position:pos];
+        [self addChild:asteroid];
+        [asteroid.physicsBody applyImpulse:impulse];
+        
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

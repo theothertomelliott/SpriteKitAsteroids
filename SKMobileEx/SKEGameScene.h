@@ -10,8 +10,9 @@
 #import "JCButton.h"
 #import "CollisionCategories.h"
 #import "SKEShip.h"
+#import "SKEWrappingScene.h"
 
-@interface SKEGameScene : SKScene <SKPhysicsContactDelegate>
+@interface SKEGameScene : SKEWrappingScene
 
 // Game state
 @property (nonatomic) int score;

@@ -7,8 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SKEWrappingScene.h"
 
-@interface SKEMenuScene : SKScene
+@interface SKEMenuScene : SKEWrappingScene
 
 -(id)initWithSize:(CGSize)size title:(NSString*) title;
 
