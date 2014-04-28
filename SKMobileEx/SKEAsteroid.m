@@ -32,8 +32,8 @@
         CGMutablePathRef circlePath = CGPathCreateMutable();
         CGPathAddEllipseInRect(circlePath , NULL , CGRectMake(-self.radius, -self.radius, self.radius*2, self.radius*2) );
         self.path = circlePath;
-        self.fillColor =  [SKColor whiteColor];
-        self.lineWidth=0;
+        self.lineWidth = 1.0f;
+        
         
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.radius];
         self.physicsBody.friction = 0.0f;
