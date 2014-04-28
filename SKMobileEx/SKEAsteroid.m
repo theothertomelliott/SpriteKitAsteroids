@@ -39,7 +39,7 @@
         self.physicsBody.friction = 0.0f;
         
         self.physicsBody.usesPreciseCollisionDetection = YES;
-        self.physicsBody.categoryBitMask = asteroidCategory;
+        self.physicsBody.categoryBitMask = asteroidCategory | wraparoundCategory;
         self.physicsBody.collisionBitMask = 0;
         self.physicsBody.contactTestBitMask = missileCategory;
         

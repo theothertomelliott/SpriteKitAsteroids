@@ -79,7 +79,7 @@
     border.physicsBody.usesPreciseCollisionDetection = YES;
     border.physicsBody.categoryBitMask = category;
     border.physicsBody.collisionBitMask = 0;
-    border.physicsBody.contactTestBitMask = asteroidCategory | shipCategory;
+    border.physicsBody.contactTestBitMask = wraparoundCategory;
     [self addChild:border];
 }
 

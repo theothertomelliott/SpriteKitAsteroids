@@ -28,7 +28,7 @@
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width/2];
         self.physicsBody.usesPreciseCollisionDetection = YES;
         
-        self.physicsBody.categoryBitMask = shipCategory;
+        self.physicsBody.categoryBitMask = shipCategory | wraparoundCategory;
         self.physicsBody.collisionBitMask = 0;
         self.physicsBody.contactTestBitMask = asteroidCategory;
         
