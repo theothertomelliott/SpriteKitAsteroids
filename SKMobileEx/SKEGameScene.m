@@ -173,11 +173,11 @@
      * Handle an asteroid being hit by a missile
      */
     
-    if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == missileCategory)
-    || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == missileCategory)){
+    if(((contact.bodyA.categoryBitMask & asteroidCategory) != 0 && (contact.bodyB.categoryBitMask & missileCategory) != 0)
+    || ((contact.bodyB.categoryBitMask & asteroidCategory) != 0 && (contact.bodyA.categoryBitMask & missileCategory) != 0)){
         NSLog(@"Hit asteroid!");
         
-        SKEAsteroid* shotAsteroid = (SKEAsteroid*)  (contact.bodyA.categoryBitMask == asteroidCategory ? contact.bodyA.node : contact.bodyB.node);
+        SKEAsteroid* shotAsteroid = (SKEAsteroid*)  ((contact.bodyA.categoryBitMask & asteroidCategory) != 0 ? contact.bodyA.node : contact.bodyB.node);
         
         self.score += shotAsteroid.score;
         
@@ -226,8 +226,9 @@
      * Handle the ship colliding with an asteroid
      */
     
-    if((contact.bodyA.categoryBitMask == asteroidCategory && contact.bodyB.categoryBitMask == shipCategory)
-       || (contact.bodyB.categoryBitMask == asteroidCategory && contact.bodyA.categoryBitMask == shipCategory)){
+    if(((contact.bodyA.categoryBitMask & asteroidCategory) != 0 && (contact.bodyB.categoryBitMask & shipCategory) != 0)
+       ||
+       ((contact.bodyB.categoryBitMask & asteroidCategory) != 0 && (contact.bodyA.categoryBitMask & shipCategory) != 0)){
         NSLog(@"Ship crashed!");
         [self removeChildrenInArray:[NSArray arrayWithObject:self.ship]];
         self.ship = nil;
