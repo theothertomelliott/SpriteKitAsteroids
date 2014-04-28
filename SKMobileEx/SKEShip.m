@@ -11,13 +11,21 @@
 @implementation SKEShip
 
 -(id)initDefault {
-    if((self = [super initWithImageNamed:@"Spaceship"]))
+    if((self = [super init]))
     {
-        CGSize size = self.size;
-        size.height = 20;
-        size.width = 20;
-        [self setSize:size];
-        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.frame.size.width/2];
+        
+        self.size = CGSizeMake(20, 20);
+        
+        // Create a path for a triangle pointing upwards
+        CGMutablePathRef pathToDraw = CGPathCreateMutable();
+        CGPathMoveToPoint(pathToDraw, NULL, -(self.size.width/2), 0-(self.size.height/2));
+        CGPathAddLineToPoint(pathToDraw, NULL, 0.0f, (self.size.height/2));
+        CGPathAddLineToPoint(pathToDraw, NULL, (self.size.width/2), -(self.size.height/2));
+        
+        // Apply the path
+        self.path = pathToDraw;
+        
+        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width/2];
         self.physicsBody.usesPreciseCollisionDetection = YES;
         
         self.physicsBody.categoryBitMask = shipCategory;
@@ -25,11 +33,12 @@
         self.physicsBody.contactTestBitMask = asteroidCategory;
         
         self.shipDirection = [SKShapeNode node];
-        CGMutablePathRef pathToDraw = CGPathCreateMutable();
-        //self.shipDirection.position = self.position;
-        CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
         
         if(SHOW_DIRECTION){
+            CGMutablePathRef pathToDraw = CGPathCreateMutable();
+            //self.shipDirection.position = self.position;
+            CGPathMoveToPoint(pathToDraw, NULL, 0.0f, 0.0f);
+            
             CGVector thrustDirection =  CGVectorMake(0.0f, 100.0f);
         
             CGPathAddLineToPoint(pathToDraw, NULL, thrustDirection.dx, thrustDirection.dy);

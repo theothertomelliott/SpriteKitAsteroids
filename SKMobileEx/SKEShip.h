@@ -11,10 +11,11 @@
 
 #define SHOW_DIRECTION false
 
-@interface SKEShip : SKSpriteNode
+@interface SKEShip : SKShapeNode
 
 -(id)initDefault;
 
 @property (strong, nonatomic) SKShapeNode* shipDirection;
+@property (nonatomic) CGSize size;
 
 @end
