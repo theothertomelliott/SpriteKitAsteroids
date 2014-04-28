@@ -1,6 +1,6 @@
 //
-//  SKMobileExTests.m
-//  SKMobileExTests
+//  SKEAsteroidsTests.m
+//  SKEAsteroidsTests
 //
 //  Created by Tom Elliott on 07/04/2014.
 //  Copyright (c) 2014 Tom Elliott. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface SKMobileExTests : XCTestCase
+@interface SKEAsteroidsTests : XCTestCase
 
 @end
 
-@implementation SKMobileExTests
+@implementation SKEAsteroidsTests
 
 - (void)setUp
 {

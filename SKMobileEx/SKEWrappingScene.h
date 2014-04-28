@@ -1,6 +1,6 @@
 //
 //  SKEWrappingScene.h
-//  SKMobileEx
+//  SKEAsteroids
 //
 //  Created by Tom Elliott on 27/04/2014.
 //  Copyright (c) 2014 Tom Elliott. All rights reserved.

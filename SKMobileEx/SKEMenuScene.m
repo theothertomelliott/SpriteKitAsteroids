@@ -1,6 +1,6 @@
 //
 //  SKEMenuScene.m
-//  SKMobileEx
+//  SKEAsteroids
 //
 //  Created by Tom Elliott on 25/04/2014.
 //  Copyright (c) 2014 Tom Elliott. All rights reserved.

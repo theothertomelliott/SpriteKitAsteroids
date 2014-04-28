@@ -27,7 +27,7 @@
 		E218EAA818F2658800F7ACAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA7D18F2658800F7ACAD /* Foundation.framework */; };
 		E218EAA918F2658800F7ACAD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218EA8118F2658800F7ACAD /* UIKit.framework */; };
 		E218EAB118F2658800F7ACAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E218EAAF18F2658800F7ACAD /* InfoPlist.strings */; };
-		E218EAB318F2658800F7ACAD /* SKMobileExTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EAB218F2658800F7ACAD /* SKMobileExTests.m */; };
+		E218EAB318F2658800F7ACAD /* SKEAsteroidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EAB218F2658800F7ACAD /* SKEAsteroidsTests.m */; };
 		E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1418FB8D3D000D6EBA /* SKEShip.m */; };
 		E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */; };
 		E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = E252EBDE18FCD60A003C7C19 /* SKEMissile.m */; };
@@ -54,15 +54,15 @@
 		E2124FBB1900EE6F005F0A2A /* JCJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCJoystick.h; path = JCInput/JCInput/JCJoystick.h; sourceTree = "<group>"; };
 		E2124FBC1900EE6F005F0A2A /* JCJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCJoystick.m; path = JCInput/JCInput/JCJoystick.m; sourceTree = "<group>"; };
 		E2124FC01900F0E3005F0A2A /* CGVectorAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CGVectorAdditions.h; path = "CGVector-Awesome/CGVectorAdditions.h"; sourceTree = "<group>"; };
-		E218EA7A18F2658800F7ACAD /* SKMobileEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKMobileEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E218EA7A18F2658800F7ACAD /* SKEAsteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKEAsteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218EA7D18F2658800F7ACAD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E218EA7F18F2658800F7ACAD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E218EA8118F2658800F7ACAD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E218EA8318F2658800F7ACAD /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		E218EA8718F2658800F7ACAD /* SKMobileEx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKMobileEx-Info.plist"; sourceTree = "<group>"; };
+		E218EA8718F2658800F7ACAD /* SKEAsteroids-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKEAsteroids-Info.plist"; sourceTree = "<group>"; };
 		E218EA8918F2658800F7ACAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E218EA8B18F2658800F7ACAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E218EA8D18F2658800F7ACAD /* SKMobileEx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKMobileEx-Prefix.pch"; sourceTree = "<group>"; };
+		E218EA8D18F2658800F7ACAD /* SKEAsteroids-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKEAsteroids-Prefix.pch"; sourceTree = "<group>"; };
 		E218EA8E18F2658800F7ACAD /* SKEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEAppDelegate.h; sourceTree = "<group>"; };
 		E218EA8F18F2658800F7ACAD /* SKEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEAppDelegate.m; sourceTree = "<group>"; };
 		E218EA9218F2658800F7ACAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -72,11 +72,11 @@
 		E218EA9A18F2658800F7ACAD /* SKEGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKEGameScene.h; sourceTree = "<group>"; };
 		E218EA9B18F2658800F7ACAD /* SKEGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEGameScene.m; sourceTree = "<group>"; };
 		E218EA9F18F2658800F7ACAD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E218EAA518F2658800F7ACAD /* SKMobileExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKMobileExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E218EAA518F2658800F7ACAD /* SKEAsteroidsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKEAsteroidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E218EAA618F2658800F7ACAD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E218EAAE18F2658800F7ACAD /* SKMobileExTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKMobileExTests-Info.plist"; sourceTree = "<group>"; };
+		E218EAAE18F2658800F7ACAD /* SKEAsteroidsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKEAsteroidsTests-Info.plist"; sourceTree = "<group>"; };
 		E218EAB018F2658800F7ACAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E218EAB218F2658800F7ACAD /* SKMobileExTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKMobileExTests.m; sourceTree = "<group>"; };
+		E218EAB218F2658800F7ACAD /* SKEAsteroidsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEAsteroidsTests.m; sourceTree = "<group>"; };
 		E24D8E1318FB8D3D000D6EBA /* SKEShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEShip.h; sourceTree = "<group>"; };
 		E24D8E1418FB8D3D000D6EBA /* SKEShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEShip.m; sourceTree = "<group>"; };
 		E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 			children = (
 				E252EBD918FCD4A0003C7C19 /* CGVectorAwesome */,
 				E24D8E0818FB04E9000D6EBA /* JCInput */,
-				E218EA8518F2658800F7ACAD /* SKMobileEx */,
-				E218EAAC18F2658800F7ACAD /* SKMobileExTests */,
+				E218EA8518F2658800F7ACAD /* SKEAsteroids */,
+				E218EAAC18F2658800F7ACAD /* SKEAsteroidsTests */,
 				E218EA7C18F2658800F7ACAD /* Frameworks */,
 				E218EA7B18F2658800F7ACAD /* Products */,
 			);
@@ -128,8 +128,8 @@
 		E218EA7B18F2658800F7ACAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E218EA7A18F2658800F7ACAD /* SKMobileEx.app */,
-				E218EAA518F2658800F7ACAD /* SKMobileExTests.xctest */,
+				E218EA7A18F2658800F7ACAD /* SKEAsteroids.app */,
+				E218EAA518F2658800F7ACAD /* SKEAsteroidsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E218EA8518F2658800F7ACAD /* SKMobileEx */ = {
+		E218EA8518F2658800F7ACAD /* SKEAsteroids */ = {
 			isa = PBXGroup;
 			children = (
 				E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */,
@@ -166,33 +166,35 @@
 				E211D94B190DDFFA00811832 /* SKEWrappingScene.h */,
 				E211D94C190DDFFA00811832 /* SKEWrappingScene.m */,
 			);
+			name = SKEAsteroids;
 			path = SKMobileEx;
 			sourceTree = "<group>";
 		};
 		E218EA8618F2658800F7ACAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E218EA8718F2658800F7ACAD /* SKMobileEx-Info.plist */,
+				E218EA8718F2658800F7ACAD /* SKEAsteroids-Info.plist */,
 				E218EA8818F2658800F7ACAD /* InfoPlist.strings */,
 				E218EA8B18F2658800F7ACAD /* main.m */,
-				E218EA8D18F2658800F7ACAD /* SKMobileEx-Prefix.pch */,
+				E218EA8D18F2658800F7ACAD /* SKEAsteroids-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E218EAAC18F2658800F7ACAD /* SKMobileExTests */ = {
+		E218EAAC18F2658800F7ACAD /* SKEAsteroidsTests */ = {
 			isa = PBXGroup;
 			children = (
-				E218EAB218F2658800F7ACAD /* SKMobileExTests.m */,
+				E218EAB218F2658800F7ACAD /* SKEAsteroidsTests.m */,
 				E218EAAD18F2658800F7ACAD /* Supporting Files */,
 			);
+			name = SKEAsteroidsTests;
 			path = SKMobileExTests;
 			sourceTree = "<group>";
 		};
 		E218EAAD18F2658800F7ACAD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E218EAAE18F2658800F7ACAD /* SKMobileExTests-Info.plist */,
+				E218EAAE18F2658800F7ACAD /* SKEAsteroidsTests-Info.plist */,
 				E218EAAF18F2658800F7ACAD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -235,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E218EA7918F2658800F7ACAD /* SKMobileEx */ = {
+		E218EA7918F2658800F7ACAD /* SKEAsteroids */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E218EAB618F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileEx" */;
+			buildConfigurationList = E218EAB618F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKEAsteroids" */;
 			buildPhases = (
 				E218EA7618F2658800F7ACAD /* Sources */,
 				E218EA7718F2658800F7ACAD /* Frameworks */,
@@ -247,14 +249,14 @@
 			);
 			dependencies = (
 			);
-			name = SKMobileEx;
+			name = SKEAsteroids;
 			productName = SKMobileEx;
-			productReference = E218EA7A18F2658800F7ACAD /* SKMobileEx.app */;
+			productReference = E218EA7A18F2658800F7ACAD /* SKEAsteroids.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E218EAA418F2658800F7ACAD /* SKMobileExTests */ = {
+		E218EAA418F2658800F7ACAD /* SKEAsteroidsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E218EAB918F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileExTests" */;
+			buildConfigurationList = E218EAB918F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKEAsteroidsTests" */;
 			buildPhases = (
 				E218EAA118F2658800F7ACAD /* Sources */,
 				E218EAA218F2658800F7ACAD /* Frameworks */,
@@ -265,9 +267,9 @@
 			dependencies = (
 				E218EAAB18F2658800F7ACAD /* PBXTargetDependency */,
 			);
-			name = SKMobileExTests;
+			name = SKEAsteroidsTests;
 			productName = SKMobileExTests;
-			productReference = E218EAA518F2658800F7ACAD /* SKMobileExTests.xctest */;
+			productReference = E218EAA518F2658800F7ACAD /* SKEAsteroidsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -288,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E218EA7518F2658800F7ACAD /* Build configuration list for PBXProject "SKMobileEx" */;
+			buildConfigurationList = E218EA7518F2658800F7ACAD /* Build configuration list for PBXProject "SKEAsteroids" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -301,8 +303,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E218EA7918F2658800F7ACAD /* SKMobileEx */,
-				E218EAA418F2658800F7ACAD /* SKMobileExTests */,
+				E218EA7918F2658800F7ACAD /* SKEAsteroids */,
+				E218EAA418F2658800F7ACAD /* SKEAsteroidsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,7 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E218EAB318F2658800F7ACAD /* SKMobileExTests.m in Sources */,
+				E218EAB318F2658800F7ACAD /* SKEAsteroidsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +364,7 @@
 /* Begin PBXTargetDependency section */
 		E218EAAB18F2658800F7ACAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E218EA7918F2658800F7ACAD /* SKMobileEx */;
+			target = E218EA7918F2658800F7ACAD /* SKEAsteroids */;
 			targetProxy = E218EAAA18F2658800F7ACAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -483,9 +485,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
-				INFOPLIST_FILE = "SKMobileEx/SKMobileEx-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SKMobileEx/SKEAsteroids-Prefix.pch";
+				INFOPLIST_FILE = "SKMobileEx/SKEAsteroids-Info.plist";
+				PRODUCT_NAME = SKEAsteroids;
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -500,9 +502,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
-				INFOPLIST_FILE = "SKMobileEx/SKMobileEx-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SKMobileEx/SKEAsteroids-Prefix.pch";
+				INFOPLIST_FILE = "SKMobileEx/SKEAsteroids-Info.plist";
+				PRODUCT_NAME = SKEAsteroids;
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -524,8 +526,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SKMobileExTests/SKMobileExTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SKMobileExTests/SKEAsteroidsTests-Info.plist";
+				PRODUCT_NAME = SKEAsteroidsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -542,8 +544,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SKMobileEx/SKMobileEx-Prefix.pch";
-				INFOPLIST_FILE = "SKMobileExTests/SKMobileExTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SKMobileExTests/SKEAsteroidsTests-Info.plist";
+				PRODUCT_NAME = SKEAsteroidsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -552,7 +554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E218EA7518F2658800F7ACAD /* Build configuration list for PBXProject "SKMobileEx" */ = {
+		E218EA7518F2658800F7ACAD /* Build configuration list for PBXProject "SKEAsteroids" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E218EAB418F2658800F7ACAD /* Debug */,
@@ -561,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E218EAB618F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileEx" */ = {
+		E218EAB618F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKEAsteroids" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E218EAB718F2658800F7ACAD /* Debug */,
@@ -570,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E218EAB918F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKMobileExTests" */ = {
+		E218EAB918F2658800F7ACAD /* Build configuration list for PBXNativeTarget "SKEAsteroidsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E218EABA18F2658800F7ACAD /* Debug */,

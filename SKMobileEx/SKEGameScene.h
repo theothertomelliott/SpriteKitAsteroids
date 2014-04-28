@@ -1,6 +1,6 @@
 //
 //  SKEMyScene.h
-//  SKMobileEx
+//  SKEAsteroids
 //
 
 //  Copyright (c) 2014 Tom Elliott. All rights reserved.

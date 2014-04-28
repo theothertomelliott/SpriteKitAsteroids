@@ -1,6 +1,6 @@
 //
 //  SKEAppDelegate.h
-//  SKMobileEx
+//  SKEAsteroids
 //
 //  Created by Tom Elliott on 07/04/2014.
 //  Copyright (c) 2014 Tom Elliott. All rights reserved.
