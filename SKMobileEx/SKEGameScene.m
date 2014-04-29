@@ -214,22 +214,29 @@
  */
 - (void) createButtons:(CGSize) size{
 
-    self.thrustButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor greenColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
+    SKColor* whiteTranslucent = [SKColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:0.5f];
+    SKColor* grayTranslucent = [SKColor colorWithHue:0.0f saturation:0.0f brightness:0.5f alpha:0.5f];
+    
+    self.thrustButton = [[JCButton alloc] initWithButtonRadius:25 color:whiteTranslucent pressedColor:grayTranslucent isTurbo:NO isRapidFire:YES];
     [self.thrustButton setPosition:CGPointMake(size.width - 40,95)];
+    self.thrustButton.zPosition = 100;
     [self addChild:self.thrustButton];
 
     
-    self.leftButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
-    [self.leftButton setPosition:CGPointMake(20,45)];
+    self.leftButton = [[JCButton alloc] initWithButtonRadius:25 color:whiteTranslucent pressedColor:grayTranslucent isTurbo:NO isRapidFire:YES];
+    [self.leftButton setPosition:CGPointMake(30,45)];
+    self.leftButton.zPosition = 100;
     [self addChild:self.leftButton];
 
     
-    self.rightButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
-    [self.rightButton setPosition:CGPointMake(75,45)];
+    self.rightButton = [[JCButton alloc] initWithButtonRadius:25 color:whiteTranslucent pressedColor:grayTranslucent isTurbo:NO isRapidFire:YES];
+    [self.rightButton setPosition:CGPointMake(85,45)];
+    self.rightButton.zPosition = 100;
     [self addChild:self.rightButton];
     
-    self.fireButton = [[JCButton alloc] initWithButtonRadius:25 color:[SKColor redColor] pressedColor:[SKColor blackColor] isTurbo:NO isRapidFire:YES];
+    self.fireButton = [[JCButton alloc] initWithButtonRadius:25 color:whiteTranslucent pressedColor:grayTranslucent isTurbo:NO isRapidFire:YES];
     [self.fireButton setPosition:CGPointMake(size.width - 70,45)];
+    self.fireButton.zPosition = 100;
     [self addChild:self.fireButton];
     
     //scheduling the action to check movement buttons
