@@ -12,6 +12,7 @@
 #import "SKEMenuScene.h"
 #import "CGVectorAdditions.h"
 #include <stdlib.h>
+#import "SKEShipExplosion.h"
 
 @implementation SKEGameScene
 
@@ -174,8 +175,14 @@
        ||
        ((contact.bodyB.categoryBitMask & asteroidCategory) != 0 && (contact.bodyA.categoryBitMask & shipCategory) != 0)){
         NSLog(@"Ship crashed!");
+        
+        SKEShipExplosion* splody = [[SKEShipExplosion alloc] initDefault];
+        splody.position = self.ship.position;
+        [self addChild:splody];
+        
         [self removeChildrenInArray:[NSArray arrayWithObject:self.ship]];
         self.ship = nil;
+        
         
         // Create a new ship after a brief period
         self.lives -= 1;

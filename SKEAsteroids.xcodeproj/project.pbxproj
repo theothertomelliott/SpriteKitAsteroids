@@ -32,6 +32,7 @@
 		E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */; };
 		E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = E252EBDE18FCD60A003C7C19 /* SKEMissile.m */; };
 		E261D2A5190B44310097B88F /* SKEMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E261D2A4190B44310097B88F /* SKEMenuScene.m */; };
+		E27C0F9B19109E0200AD5C87 /* SKEShipExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = E27C0F9A19109E0200AD5C87 /* SKEShipExplosion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		E252EBDE18FCD60A003C7C19 /* SKEMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEMissile.m; sourceTree = "<group>"; };
 		E261D2A3190B44310097B88F /* SKEMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEMenuScene.h; sourceTree = "<group>"; };
 		E261D2A4190B44310097B88F /* SKEMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEMenuScene.m; sourceTree = "<group>"; };
+		E27C0F9919109E0200AD5C87 /* SKEShipExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEShipExplosion.h; sourceTree = "<group>"; };
+		E27C0F9A19109E0200AD5C87 /* SKEShipExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEShipExplosion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,8 @@
 		E24D8E1218FB8D22000D6EBA /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				E27C0F9919109E0200AD5C87 /* SKEShipExplosion.h */,
+				E27C0F9A19109E0200AD5C87 /* SKEShipExplosion.m */,
 				E24D8E1318FB8D3D000D6EBA /* SKEShip.h */,
 				E24D8E1418FB8D3D000D6EBA /* SKEShip.m */,
 				E24D8E1718FB943B000D6EBA /* SKEAsteroid.h */,
@@ -340,6 +345,7 @@
 				E2124FBE1900EE6F005F0A2A /* JCImageJoystick.m in Sources */,
 				E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */,
 				E261D2A5190B44310097B88F /* SKEMenuScene.m in Sources */,
+				E27C0F9B19109E0200AD5C87 /* SKEShipExplosion.m in Sources */,
 				E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */,
 				E218EA9918F2658800F7ACAD /* SKEViewController.m in Sources */,
 				E218EA9018F2658800F7ACAD /* SKEAppDelegate.m in Sources */,
