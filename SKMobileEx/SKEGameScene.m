@@ -189,13 +189,20 @@
         if(self.lives > 0){
             [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(createShip) userInfo:nil repeats:NO];
         } else {
-            // Display game over
-            SKScene * scene = [[SKEMenuScene alloc] initWithSize:self.view.bounds.size title:@"Game Over"];
-            scene.scaleMode = SKSceneScaleModeAspectFill;
-            // Present the scene.
-            [self.view presentScene:scene];
+            [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(displayGameOver) userInfo:nil repeats:NO];
         }
     }
+}
+
+/*
+ * Show the Game Over scene
+ */
+- (void) displayGameOver {
+    // Display game over
+    SKScene * scene = [[SKEMenuScene alloc] initWithSize:self.view.bounds.size title:@"Game Over"];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    // Present the scene.
+    [self.view presentScene:scene];
 }
 
 /*
