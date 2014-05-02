@@ -26,29 +26,7 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        self.scoreLabel.text = @"Score: 0";
-        self.scoreLabel.fontSize = 16;
-        self.scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
-        self.scoreLabel.position = CGPointMake(self.frame.size.width - 20,
-                                          self.frame.size.height - 20);
-        [self addChild:self.scoreLabel];
-        
-        self.livesLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        self.livesLabel.text = @"Lives: 0";
-        self.livesLabel.fontSize = 16;
-        self.livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-        self.livesLabel.position = CGPointMake(20,
-                                               self.frame.size.height - 20);
-        [self addChild:self.livesLabel];
-        
-        self.highScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-        self.highScoreLabel.text = @"High Score: 0";
-        self.highScoreLabel.fontSize = 16;
-        self.highScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-        self.highScoreLabel.position = CGPointMake(self.frame.size.width/2,
-                                               self.frame.size.height - 20);
-        [self addChild:self.highScoreLabel];
+        [self createLabels];
         
         self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
         
@@ -64,6 +42,60 @@
 
     }
     return self;
+}
+
+- (SKLabelNode*) makeDefaultLabel {
+    SKLabelNode* l = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+    l.fontSize = 16;
+    l.text = @"";
+    return l;
+}
+
+- (void) createLabels {
+
+    /* Title Labels */
+    SKLabelNode* scoreTitle = [self makeDefaultLabel];
+    scoreTitle.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+    scoreTitle.position = CGPointMake(self.frame.size.width - 20,
+                                           self.frame.size.height - 20);
+    scoreTitle.Text = @"Score";
+    [self addChild:scoreTitle];
+    
+    SKLabelNode* highScoreTitle = [self makeDefaultLabel];
+    highScoreTitle.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+    highScoreTitle.position = CGPointMake(self.frame.size.width/2,
+                                      self.frame.size.height - 20);
+    highScoreTitle.Text = @"High Score";
+    [self addChild:highScoreTitle];
+    
+    SKLabelNode* livesTitle = [self makeDefaultLabel];
+    livesTitle.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    livesTitle.position = CGPointMake(20,
+                                           self.frame.size.height - 20);
+    livesTitle.Text = @"Lives";
+    [self addChild:livesTitle];
+    
+    
+    /* Active Labels */
+    self.scoreLabel = [self makeDefaultLabel];
+    self.scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+    self.scoreLabel.position = CGPointMake(self.frame.size.width - 20,
+                                           self.frame.size.height - 40);
+    [self addChild:self.scoreLabel];
+    
+    self.livesLabel = [self makeDefaultLabel];
+    self.livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    self.livesLabel.position = CGPointMake(20,
+                                           self.frame.size.height - 40);
+    [self addChild:self.livesLabel];
+    
+    self.highScoreLabel = [self makeDefaultLabel];
+    self.highScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+    self.highScoreLabel.position = CGPointMake(self.frame.size.width/2,
+                                               self.frame.size.height - 40);
+    [self addChild:self.highScoreLabel];
+
+    
 }
 
 /**
@@ -346,9 +378,9 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     // Update the score on screen
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.score];
-    self.livesLabel.text = [NSString stringWithFormat:@"Lives: %d", self.lives];
-    self.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", (long)[SKEPersistent getHighScore]];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.score];
+    self.livesLabel.text = [NSString stringWithFormat:@"%d", self.lives];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)[SKEPersistent getHighScore]];
 
 }
 
