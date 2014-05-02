@@ -31,6 +31,7 @@
 
 // Labels and other indicators
 @property (strong, nonatomic) SKLabelNode* scoreLabel;
+@property (strong, nonatomic) SKLabelNode* highScoreLabel;
 @property (strong, nonatomic) SKLabelNode* livesLabel;
 
 @end

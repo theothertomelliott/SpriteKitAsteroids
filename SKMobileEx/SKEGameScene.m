@@ -13,6 +13,7 @@
 #import "CGVectorAdditions.h"
 #include <stdlib.h>
 #import "SKEShipExplosion.h"
+#import "SKEPersistent.h"
 
 @implementation SKEGameScene
 
@@ -39,8 +40,15 @@
         self.livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
         self.livesLabel.position = CGPointMake(20,
                                                self.frame.size.height - 20);
-        
         [self addChild:self.livesLabel];
+        
+        self.highScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+        self.highScoreLabel.text = @"High Score: 0";
+        self.highScoreLabel.fontSize = 16;
+        self.highScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+        self.highScoreLabel.position = CGPointMake(self.frame.size.width/2,
+                                               self.frame.size.height - 20);
+        [self addChild:self.highScoreLabel];
         
         self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);
         
@@ -106,6 +114,13 @@
     
 }
 
+- (void) incrementScore:(int) value {
+    self.score += value;
+    if([SKEPersistent updateHighScore:self.score]){
+        NSLog(@"Achieved high score!");
+    }
+}
+
 /*
  * Handle contact between two entities
  */
@@ -124,7 +139,7 @@
         
         SKEAsteroid* shotAsteroid = (SKEAsteroid*)  ((contact.bodyA.categoryBitMask & asteroidCategory) != 0 ? contact.bodyA.node : contact.bodyB.node);
         
-        self.score += shotAsteroid.score;
+        [self incrementScore:shotAsteroid.score];
         
         if(shotAsteroid.type > 0){
             
@@ -333,6 +348,7 @@
     // Update the score on screen
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.score];
     self.livesLabel.text = [NSString stringWithFormat:@"Lives: %d", self.lives];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"High Score: %ld", (long)[SKEPersistent getHighScore]];
 
 }
 

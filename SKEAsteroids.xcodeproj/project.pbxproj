@@ -30,6 +30,7 @@
 		E218EAB318F2658800F7ACAD /* SKEAsteroidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E218EAB218F2658800F7ACAD /* SKEAsteroidsTests.m */; };
 		E24D8E1518FB8D3D000D6EBA /* SKEShip.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1418FB8D3D000D6EBA /* SKEShip.m */; };
 		E24D8E1918FB943B000D6EBA /* SKEAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */; };
+		E24EC44B1913223D00E25C35 /* SKEPersistent.m in Sources */ = {isa = PBXBuildFile; fileRef = E24EC44A1913223D00E25C35 /* SKEPersistent.m */; };
 		E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */ = {isa = PBXBuildFile; fileRef = E252EBDE18FCD60A003C7C19 /* SKEMissile.m */; };
 		E261D2A5190B44310097B88F /* SKEMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E261D2A4190B44310097B88F /* SKEMenuScene.m */; };
 		E27C0F9B19109E0200AD5C87 /* SKEShipExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = E27C0F9A19109E0200AD5C87 /* SKEShipExplosion.m */; };
@@ -83,6 +84,8 @@
 		E24D8E1618FB8E5C000D6EBA /* CollisionCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategories.h; sourceTree = "<group>"; };
 		E24D8E1718FB943B000D6EBA /* SKEAsteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEAsteroid.h; sourceTree = "<group>"; };
 		E24D8E1818FB943B000D6EBA /* SKEAsteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEAsteroid.m; sourceTree = "<group>"; };
+		E24EC4491913223D00E25C35 /* SKEPersistent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPersistent.h; sourceTree = "<group>"; };
+		E24EC44A1913223D00E25C35 /* SKEPersistent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPersistent.m; sourceTree = "<group>"; };
 		E252EBDD18FCD60A003C7C19 /* SKEMissile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEMissile.h; sourceTree = "<group>"; };
 		E252EBDE18FCD60A003C7C19 /* SKEMissile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEMissile.m; sourceTree = "<group>"; };
 		E261D2A3190B44310097B88F /* SKEMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEMenuScene.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				E218EA8618F2658800F7ACAD /* Supporting Files */,
 				E211D94B190DDFFA00811832 /* SKEWrappingScene.h */,
 				E211D94C190DDFFA00811832 /* SKEWrappingScene.m */,
+				E24EC4491913223D00E25C35 /* SKEPersistent.h */,
+				E24EC44A1913223D00E25C35 /* SKEPersistent.m */,
 			);
 			name = SKEAsteroids;
 			path = SKMobileEx;
@@ -341,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24EC44B1913223D00E25C35 /* SKEPersistent.m in Sources */,
 				E2124FBF1900EE6F005F0A2A /* JCJoystick.m in Sources */,
 				E2124FBE1900EE6F005F0A2A /* JCImageJoystick.m in Sources */,
 				E252EBDF18FCD60A003C7C19 /* SKEMissile.m in Sources */,
