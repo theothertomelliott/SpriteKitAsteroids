@@ -44,58 +44,31 @@
     return self;
 }
 
-- (SKLabelNode*) makeDefaultLabel {
-    SKLabelNode* l = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-    l.fontSize = 16;
-    l.text = @"";
-    return l;
-}
-
 - (void) createLabels {
 
     /* Title Labels */
-    SKLabelNode* scoreTitle = [self makeDefaultLabel];
-    scoreTitle.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
-    scoreTitle.position = CGPointMake(self.frame.size.width - 20,
-                                           self.frame.size.height - 20);
+    SKLabelNode* scoreTitle = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width - 20,
+                                                                             self.frame.size.height - 20) horizontalAlignment: SKLabelHorizontalAlignmentModeRight];
     scoreTitle.Text = @"Score";
-    [self addChild:scoreTitle];
     
-    SKLabelNode* highScoreTitle = [self makeDefaultLabel];
-    highScoreTitle.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-    highScoreTitle.position = CGPointMake(self.frame.size.width/2,
-                                      self.frame.size.height - 20);
+    SKLabelNode* highScoreTitle = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width/2,
+                                                                                 self.frame.size.height - 20)horizontalAlignment:SKLabelHorizontalAlignmentModeCenter];
     highScoreTitle.Text = @"High Score";
-    [self addChild:highScoreTitle];
     
-    SKLabelNode* livesTitle = [self makeDefaultLabel];
-    livesTitle.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-    livesTitle.position = CGPointMake(20,
-                                           self.frame.size.height - 20);
+    SKLabelNode* livesTitle = [self makeDefaultLabelWithPosition:CGPointMake(20,
+                                                                             self.frame.size.height - 20) horizontalAlignment:SKLabelHorizontalAlignmentModeLeft];
     livesTitle.Text = @"Lives";
-    [self addChild:livesTitle];
     
     
     /* Active Labels */
-    self.scoreLabel = [self makeDefaultLabel];
-    self.scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
-    self.scoreLabel.position = CGPointMake(self.frame.size.width - 20,
-                                           self.frame.size.height - 40);
-    [self addChild:self.scoreLabel];
+    self.scoreLabel = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width - 20,
+                                                                     self.frame.size.height - 40) horizontalAlignment:SKLabelHorizontalAlignmentModeRight];
     
-    self.livesLabel = [self makeDefaultLabel];
-    self.livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-    self.livesLabel.position = CGPointMake(20,
-                                           self.frame.size.height - 40);
-    [self addChild:self.livesLabel];
+    self.livesLabel = [self makeDefaultLabelWithPosition:CGPointMake(20,
+                                                                     self.frame.size.height - 40) horizontalAlignment:SKLabelHorizontalAlignmentModeLeft];
     
-    self.highScoreLabel = [self makeDefaultLabel];
-    self.highScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-    self.highScoreLabel.position = CGPointMake(self.frame.size.width/2,
-                                               self.frame.size.height - 40);
-    [self addChild:self.highScoreLabel];
-
-    
+    self.highScoreLabel = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width/2,
+                                                                         self.frame.size.height - 40) horizontalAlignment:SKLabelHorizontalAlignmentModeCenter];
 }
 
 /**

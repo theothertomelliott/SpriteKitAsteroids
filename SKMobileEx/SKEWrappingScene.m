@@ -19,6 +19,19 @@
     return self;
 }
 
+/**
+ * Create a label node add it to the scene and return
+ */
+- (SKLabelNode*) makeDefaultLabelWithPosition:(CGPoint) position horizontalAlignment:(SKLabelHorizontalAlignmentMode) haMode {
+    SKLabelNode* l = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+    l.fontSize = 16;
+    l.text = @"";
+    l.position = position;
+    l.horizontalAlignmentMode = haMode;
+    [self addChild:l];
+    return l;
+}
+
 /*
  * Handle contact between two entities
  */

@@ -10,4 +10,6 @@
 
 @interface SKEWrappingScene : SKScene <SKPhysicsContactDelegate>
 
+- (SKLabelNode*) makeDefaultLabelWithPosition:(CGPoint) position horizontalAlignment:(SKLabelHorizontalAlignmentMode) haMode;
+
 @end

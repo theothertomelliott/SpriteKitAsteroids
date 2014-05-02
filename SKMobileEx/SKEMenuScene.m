@@ -9,6 +9,7 @@
 #import "SKEMenuScene.h"
 #import "SKEGameScene.h"
 #import "SKEAsteroid.h"
+#import "SKEPersistent.h"
 
 @implementation SKEMenuScene
 
@@ -26,22 +27,22 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         
-        SKLabelNode* titleLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+        SKLabelNode* titleLabel = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width/2,
+                                                                                 self.frame.size.height-100) horizontalAlignment:SKLabelHorizontalAlignmentModeCenter];
         titleLabel.text = title;
         titleLabel.fontSize = 30;
-        titleLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-        titleLabel.position = CGPointMake(self.frame.size.width/2,
-                                         self.frame.size.height-100);
         
-        [self addChild:titleLabel];
-        
-        SKLabelNode* menuLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+        SKLabelNode* menuLabel = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width/2,
+                                                                                self.frame.size.height/2) horizontalAlignment:SKLabelHorizontalAlignmentModeCenter];
         menuLabel.text = @"Touch to start a game";
-        menuLabel.fontSize = 16;
-        menuLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-        menuLabel.position = CGPointMake(self.frame.size.width/2,
-                                               self.frame.size.height/2);
-        [self addChild:menuLabel];
+        
+        SKLabelNode* highScoreTitleLabel = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width/2,
+                                                                                self.frame.size.height/2 - 80) horizontalAlignment:SKLabelHorizontalAlignmentModeCenter];
+        highScoreTitleLabel.text = @"High Score";
+        
+        SKLabelNode* highScoreLabel = [self makeDefaultLabelWithPosition:CGPointMake(self.frame.size.width/2,
+                                                                                          self.frame.size.height/2 - 110) horizontalAlignment:SKLabelHorizontalAlignmentModeCenter];
+        highScoreLabel.text = [NSString stringWithFormat:@"%d",[SKEPersistent getHighScore]];
         
     }
     return self;
