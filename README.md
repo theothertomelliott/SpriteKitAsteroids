@@ -1,9 +1,12 @@
-SpriteKitAsteroids
-==================
+## SpriteKitAsteroids
 
 An Asteroids clone built to get to grips with SpriteKit on iOS
 
 As a clone, this is very basic, currently missing the hyperspace/shield option and flying saucers. But the old game dynamics we know and love are there.
+
+## Screenshots
+
+![Screenshot](http://www.theothertomelliott.com/wp-content/uploads/2014/05/IMG_4043.png)
 
 ## Dependencies
 
